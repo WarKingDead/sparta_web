@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 페이지</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;500;600;700&family=Noto+Serif+KR:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+
+
+
+<!-- css를 § 파일명.css §를 만들어 연결할 경우
+link rel="stylesheet" type="test/css" href="파일명.css" 로
+head 에 작성할 수 있다.
+-->
+
+
+<!--환경마다 주석 표기가 다르기 때문에, 단축키 CTRL+/ 로 외운다.-->
+
+    <style>
+       *{
+           font-family: 'Hahmlet', serif;
+font-family: 'Noto Serif KR', serif;
+       } .mytitle {
+
+            width: 300px;
+            height: 200px;
+
+            color: white;
+
+            text-align: center;
+
+            background-image: url("https://www.ancient-origins.net/sites/default/files/field/image/Agesilaus-II-cover.jpg");
+            background-size: cover;
+            background-position: center;
+
+            border-radius: 10px;
+
+            padding-top: 40px;
+        }
+
+        .mybtn {
+            margin: 20px 20px 20px 20px;
+        }
+
+        .wrap {
+            width: 300px;
+            margin: auto;
+        }
+    </style>
+</head>
+<!--border-radius:가 이미지 모서리굴리기-->
+<!--간격 태그 바깥여백 margin & 안쪽 여백 padding-->
+
+
+<body>
+<div class="wrap">
+<div class="mytitle">
+<h1>로그인 페이지</h1>
+<h5>아이디, 패스워드를 입력해주세요</h5>
+</div>
+
+  <p>ID: <input type="text"/></p>
+  <p>PW: <input type="text"/></p>
+  <p>
+    <button class=="mybtn">로그인</button>
+  </p>
+</div>
+
+</body>
+</html>
+
+
