@@ -21,390 +21,388 @@ JAVASCRIPT 의 문법
 		let firstName = 'bob' 	// camel case라고 합니다. 회사마다 규칙이 있죠.
 	과 같이, 쉽게 알아볼 수 있게 쓰는 게 중요합니다.
 	다른 특수문자 또는 띄워쓰기는 불가능합니다!
+	
+
+
+	console.log(변수)   : 콘솔 창에 괄호 안의 값을 출력해줍니다
+	console.log(변수1,변수2) 로 여러 변수를 한번에 출력할 수도 있어요.
+	아래를 복사해서 붙여넣어보세요.
+
+	변수 & 기본연산
+	- 변수 대입( a = 2 )의 의미: "오른쪽에 있는 것을 왼쪽에 넣는 것!"
+	(2를 a라는 변수에 넣는다)
+	- let으로 변수를 선언합니다.
+	->변수선언
+		let num = 20
+		num = 'Bob'
+	->변수선언
+		let first = 'Bob'
+		let last = 'Lee'
+	->명령
+		first+last // 'BobLee'
+	->선언
+	let a = 1
+	let b = 2
+	->연산명령
+	a+b // 3
+	a/b // 0.5
+
 
 
 2. 자료형
 
-리스트: 순서를 지켜서 가지고 있는 형태입니다.
-		let a_list = [] 			 // 리스트를 선언. 변수 이름은 역시 아무렇게나 가능
-		let b_list = [1,2,'hey',3]		 // 로 선언 가능
-		b_list[1] 	 			// 2가 출력됨.
-	리스트에 요소 넣기	
-		b_list.push('헤이')  			//요소를 추가하려고 밀어 넣는 느낌? PUSH
-		b_list 				// [1, 2, "hey", 3, "헤이"] 가 출력됨
-	순서를 나타내기 위해 리스트를 사용하면, 이렇게나 깔끔해집니다.
-	let customer = [
-	    {'name': '김스파', 'phone': '010-1234-1234'},
-	    {'name': '박르탄', 'phone': '010-4321-4321'}
+	리스트: 순서를 지켜서 가지고 있는 형태입니다.
+			let a_list = [] 			 // 리스트를 선언. 변수 이름은 역시 아무렇게나 가능
+			let b_list = [1,2,'hey',3]		 // 로 선언 가능
+			b_list[1] 	 			// 2가 출력됨.
+		리스트에 요소 넣기	
+			b_list.push('헤이')  			//요소를 추가하려고 밀어 넣는 느낌? PUSH
+			b_list 				// [1, 2, "hey", 3, "헤이"] 가 출력됨
+		순서를 나타내기 위해 리스트를 사용하면, 이렇게나 깔끔해집니다.
+		let customer = [
+		    {'name': '김스파', 'phone': '010-1234-1234'},
+		    {'name': '박르탄', 'phone': '010-4321-4321'}
 
 
-딕셔너리: 키(key)-밸류(value) 값의 묶음
-		let a_dict = {}  			// 딕셔너리 선언. 변수 이름은 역시 아무렇게나 가능!
-		let b_dict = {'name':'Bob','age':21} 	// 로 선언 가능
-		b_dict['name'] 			// 'Bob'을 출력
-		b_dict['age'] 			// 21을 출력
+	딕셔너리: 키(key)-밸류(value) 값의 묶음
+			let a_dict = {}  			// 딕셔너리 선언. 변수 이름은 역시 아무렇게나 가능!
+			let b_dict = {'name':'Bob','age':21} 	// 로 선언 가능
+			b_dict['name'] 			// 'Bob'을 출력
+			b_dict['age'] 			// 21을 출력
 
-		b_dict['height'] = 180 		// 딕셔너리에 키:밸류 넣기
-		b_dict				// {name: "Bob", age: 21, height: 180}을 출력
-	딕셔너리를 활용한다면 다음과 같이 고객 별로 정보를 묶을 수 있습니다.
-	let customer_1 = {'name': '김스파', 'phone': '010-1234-1234'};
-	let customer_2 = {'name': '박르탄', 'phone': '010-4321-4321'};
+			b_dict['height'] = 180 		// 딕셔너리에 키:밸류 넣기
+			b_dict				// {name: "Bob", age: 21, height: 180}을 출력
+		딕셔너리를 활용한다면 다음과 같이 고객 별로 정보를 묶을 수 있습니다.
+		let customer_1 = {'name': '김스파', 'phone': '010-1234-1234'};
+		let customer_2 = {'name': '박르탄', 'phone': '010-4321-4321'};
 
 
-리스트와 딕셔너리의 조합
-		names = [{'name':'bob','age':20},{'name':'carry','age':38}]
+	리스트와 딕셔너리의 조합
+			names = [{'name':'bob','age':20},{'name':'carry','age':38}]
 
-				// names[0]['name']의 값은? 'bob'
-				// names[1]['name']의 값은? 'carry'
+					// names[0]['name']의 값은? 'bob'
+					// names[1]['name']의 값은? 'carry'
 
-		new_name = {'name':'john','age':7}
-		names.push(new_name)
+			new_name = {'name':'john','age':7}
+			names.push(new_name)
 
-				// names의 값은? [{'name':'bob','age':20},{'name':'carry','age':38},{'name':'john','age':7}]
-				// names[2]['name']의 값은? 'john'
+					// names의 값은? [{'name':'bob','age':20},{'name':'carry','age':38},{'name':'john','age':7}]
+					// names[2]['name']의 값은? 'john'
 
 
 
 3. 함수 ex)
-	'나눗셈의나머지'를 구하고 싶은 경우
-		let a = 20
-		let b = 7
-		a % b 		// 6 출력됨
+			'나눗셈의나머지'를 구하고 싶은 경우
+				let a = 20
+				let b = 7
+				a % b 		// 6 출력됨
 
-	또, 특정 문자로 문자열을 나누고 싶은 경우
-		let myemail = 'sparta@gmail.com'
-		let result = myemail.split('@')	 // ['sparta','gmail.com']
-		result[0]				 // sparta
-		result[1]				 // gmail.com
+			또, 특정 문자로 문자열을 나누고 싶은 경우
+				let myemail = 'sparta@gmail.com'
+				let result = myemail.split('@')	 // ['sparta','gmail.com']
+				result[0]				 // sparta
+				result[1]				 // gmail.com
 
-		let result2 = result[1].split('.')		 // ['gmail','com']
+				let result2 = result[1].split('.')		 // ['gmail','com']
 
-		result2[0] 			// gmail -> 우리가 알고 싶었던 것!
-		result2[1] 			// com
+				result2[0] 			// gmail -> 우리가 알고 싶었던 것!
+				result2[1] 			// com
 
-		myemail.split('@')[1].split('.')[0]	 // gmail -> 간단하게 쓸 수도 있다!	
+				myemail.split('@')[1].split('.')[0]	 // gmail -> 간단하게 쓸 수도 있다!	
 
-	HTML에서의 활용은
+			HTML에서의 활용은
+				<head>
+				function hey(){
+					alert('안녕!');
+					}
+				</head>
+				<body>
+				<button onclick="hey()">영화 기록하기</button>
+				</body>
+			해 놓으면 영화기록하기를 클릭시 팝업으로 안녕!이 뜬다.
+
+
+
+
+
+
+
+	HTML에 함수쓰기
+
+
+		<!--    자바스크립트라고 별개 아니고 <script></script>
+			에 쓰는게 자바스크립트임,
+			상호작용이 일어나게 하는 명령문이 자바스크립트라고!-->
+
+		<!--    스크립트 창은 브라우저의 검사 / Console과 기능이 같다 !-->
+		윈도우: F12
+
+
+
+
+
+
+
+		<!doctype html>
+		<html lang="en">
+
 		<head>
-		function hey(){
-			alert('안녕!');
+		    <meta charset="utf-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"></script>
+
+
+
+		    <title>부트스트랩 연습하기</title>
+
+
+
+
+		    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+		    <style>
+
+
+			    * {
+		    font-family: 'Gowun Dodum', sans-serif;
+		    }
+
+
+
+		    .my_title {
+			    background-color: green;
+
+			    width: 100%;
+			    height: 250px;
+
+			    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+						url("https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg");
+			    background-position: center;
+			    background-size: cover;
+
+			    color: white;
+
+			    display: flex;
+			    flex-direction: column;
+			    justify-content: center;
+			    align-items: center;
+
+
+			    margin-top: 10px;
 			}
+
+
+		    /*백그라운드 3총사 늘 같이 다님
+			    background-image: url("");
+			    background-position: center;
+			    background-size: cover;
+
+		  디스플레이 4총사 늘 같이 다님
+			    display: flex;
+			    flex-direction: column;
+			    justify-content: center;
+			    align-items: center;
+			    */
+
+
+
+
+		    .my_title > button {
+			  width: 200px;
+			    height: 50px;
+
+			    background-color: transparent;
+			    color: white;
+
+			    border-radius: 50px;
+			    border: 1px solid white;
+
+			    margin-top: 10px;
+		    }
+
+
+		    .my_title > button:hover {
+		      border: 3px solid white;
+		    }
+
+		    .my_coment {
+			color: red;
+		    }
+
+		    .wrap {
+			max-width: 1200px;
+			width: 95%;
+			margin: 20px auto 0px auto;
+		    }
+
+		    /*
+		    max-width는 최대로 늘렸을때 가능한도 크기를 지정하고
+		    width는 최대 크기 전까지는 이 크기로 한다고 정하는 너비이다.
+		    자동 조정이 되기 때문에 max- 를 모바일 화면에 많이 씀
+		    */
+
+
+
+
+		    .mypost {
+			margin: 10px auto 10px auto;
+			max-width: 500px;
+			width: 95%;
+			box-shadow: 0px 0px 3px 0px gray;
+
+			padding: 20px;
+		    }
+		 /*magin으로 전체에 먹이는 여백 코드는 순서 상
+		 위 우 아래 좌 순으로 시계방향임
+		  다른 태그도 마찬가지*/
+
+
+		    .mybtn {
+			    display: flex;
+			    flex-direction: row;
+			    justify-content: center;
+			    align-items: center;
+
+			    margin-top: 8px;
+		    }
+
+		    .mybtn > button {
+			margin-right: 10px;
+		    }
+		    </style>
+
+
+		    <script>
+			function hey(){
+			    alert('히사시부릿');
+			}
+		    </script>
+
+		<!--    자바스크립트라고 별개 아니고 <script></script>
+			에 쓰는게 자바스크립트임,
+			상호작용이 일어나게 하는 명령문이 자바스크립트라고!-->
+
+		<!--    스크립트 창은 브라우저의 검사 / Console과 기능이 같다 !-->
+
+
+		    프로그래밍을 배울 때는 5가지만 기억하자
+		    변수/자료형/함수/조건문/반복문.
+			/   /function/if/
+
+
+
+
 		</head>
+
+
+
+
+
 		<body>
-		<button onclick="hey()">영화 기록하기</button>
+		    <div class="my_title">
+			<h1>생애의 영화들</h1>
+			<button onclick="hey()">영화 기록 하기💖</button>
+		    </div>
+
+		<!--   https://kr.piliapp.com/facebook-symbols/
+		       페북 아이콘에서 복사해다가 그대로 태그에 붙여 써도 적용가능하다-->
+
+
+
+
+		<div class="mypost">
+
+		    <form class="form-floating">
+			<input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com"
+			       value="test@example.com">
+			<label for="floatingInputValue">영화url</label>
+		    </form>
+
+		    <div class="input-group mb-3">
+			<label class="input-group-text" for="inputGroupSelect01">별점</label>
+			<select class="form-select" id="inputGroupSelect01">
+			    <option selected>선택하기</option>
+			    <option value="1">*</option>
+			    <option value="2">**</option>
+			    <option value="3">***</option>
+			    <option value="4">****</option>
+			    <option value="5">*****</option>
+			</select>
+		    </div>
+
+		    <div class="form-floating">
+			<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+			<label for="floatingTextarea">코멘터리</label>
+		    </div>
+
+		     <div class="mybtn">
+		    <button type="button" class="btn btn-primary btn-sm">저장</button>
+		    <button type="button" class="btn btn-secondary btn-sm">닫기</button>
+		    </div>
+
+
+		</div>
+
+
+
+
+
+		<div class="wrap">
+			    <div class="row row-cols-1 row-cols-md-4 g-4">
+				<div class="col">
+				    <div class="card">
+					<img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+					    <h5 class="card-title">제목 자리!</h5>
+					    <p class="card-text">내용 자리!!</p>
+					    <p>⭐⭐⭐</p>
+					    <p class="my_coment">코멘트 자리!</p>
+					</div>
+				    </div>
+				</div>
+				<div class="col">
+				    <div class="card">
+					<img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+					    <h5 class="card-title">제목 자리!</h5>
+					    <p class="card-text">내용 자리!!</p>
+					    <p>⭐⭐⭐</p>
+					    <p class="my_coment">코멘트 자리!</p>
+					</div>
+				    </div>
+				</div>
+				<div class="col">
+				    <div class="card">
+					<img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+					    <h5 class="card-title">제목 자리!</h5>
+					    <p class="card-text">내용 자리!!</p>
+					    <p>⭐⭐⭐</p>
+					    <p class="my_coment">코멘트 자리!</p>
+					</div>
+				    </div>
+				</div>
+				<div class="col">
+				    <div class="card">
+					<img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+					    <h5 class="card-title">제목 자리!</h5>
+					    <p class="card-text">내용 자리!!</p>
+					    <p>⭐⭐⭐</p>
+					    <p class="my_coment">코멘트 자리!</p>
+					</div>
+				    </div>
+				</div>
+			    </div>
+		</div>
+
+
 		</body>
-	해 놓으면 영화기록하기를 클릭시 팝업으로 안녕!이 뜬다.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--    자바스크립트라고 별개 아니고 <script></script>
-        에 쓰는게 자바스크립트임,
-        상호작용이 일어나게 하는 명령문이 자바스크립트라고!-->
-
-<!--    스크립트 창은 브라우저의 검사 / Console과 기능이 같다 !-->
-윈도우: F12
-
-
-console.log(변수)   : 콘솔 창에 괄호 안의 값을 출력해줍니다
-console.log(변수1,변수2) 로 여러 변수를 한번에 출력할 수도 있어요.
-아래를 복사해서 붙여넣어보세요.
-
-변수 & 기본연산
-- 변수 대입( a = 2 )의 의미: "오른쪽에 있는 것을 왼쪽에 넣는 것!"
-(2를 a라는 변수에 넣는다)
-- let으로 변수를 선언합니다.
-->변수선언
-	let num = 20
-	num = 'Bob'
-->변수선언
-	let first = 'Bob'
-	let last = 'Lee'
-->명령
-	first+last // 'BobLee'
-->선언
-let a = 1
-let b = 2
-->연산명령
-a+b // 3
-a/b // 0.5
-
-
-
-
-
-
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-
-
-
-    <title>부트스트랩 연습하기</title>
-
-
-
-
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
-
-    <style>
-
-
-            * {
-    font-family: 'Gowun Dodum', sans-serif;
-    }
-
-
-
-    .my_title {
-            background-color: green;
-
-            width: 100%;
-            height: 250px;
-
-            background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                                url("https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg");
-            background-position: center;
-            background-size: cover;
-
-            color: white;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-
-            margin-top: 10px;
-        }
-
-
-    /*백그라운드 3총사 늘 같이 다님
-            background-image: url("");
-            background-position: center;
-            background-size: cover;
-
-  디스플레이 4총사 늘 같이 다님
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            */
-
-
-
-
-    .my_title > button {
-          width: 200px;
-            height: 50px;
-
-            background-color: transparent;
-            color: white;
-
-            border-radius: 50px;
-            border: 1px solid white;
-
-            margin-top: 10px;
-    }
-
-
-    .my_title > button:hover {
-      border: 3px solid white;
-    }
-
-    .my_coment {
-        color: red;
-    }
-
-    .wrap {
-        max-width: 1200px;
-        width: 95%;
-        margin: 20px auto 0px auto;
-    }
-
-    /*
-    max-width는 최대로 늘렸을때 가능한도 크기를 지정하고
-    width는 최대 크기 전까지는 이 크기로 한다고 정하는 너비이다.
-    자동 조정이 되기 때문에 max- 를 모바일 화면에 많이 씀
-    */
-
-
-
-
-    .mypost {
-        margin: 10px auto 10px auto;
-        max-width: 500px;
-        width: 95%;
-        box-shadow: 0px 0px 3px 0px gray;
-
-        padding: 20px;
-    }
- /*magin으로 전체에 먹이는 여백 코드는 순서 상
- 위 우 아래 좌 순으로 시계방향임
-  다른 태그도 마찬가지*/
-
-
-    .mybtn {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-
-            margin-top: 8px;
-    }
-
-    .mybtn > button {
-        margin-right: 10px;
-    }
-    </style>
-
-
-    <script>
-        function hey(){
-            alert('히사시부릿');
-        }
-    </script>
-
-<!--    자바스크립트라고 별개 아니고 <script></script>
-        에 쓰는게 자바스크립트임,
-        상호작용이 일어나게 하는 명령문이 자바스크립트라고!-->
-
-<!--    스크립트 창은 브라우저의 검사 / Console과 기능이 같다 !-->
-
-
-    프로그래밍을 배울 때는 5가지만 기억하자
-    변수/자료형/함수/조건문/반복문.
-        /   /function/if/
-
-
-
-
-</head>
-
-
-
-
-
-<body>
-    <div class="my_title">
-        <h1>생애의 영화들</h1>
-        <button onclick="hey()">영화 기록 하기💖</button>
-    </div>
-
-<!--   https://kr.piliapp.com/facebook-symbols/
-       페북 아이콘에서 복사해다가 그대로 태그에 붙여 써도 적용가능하다-->
-
-
-
-
-<div class="mypost">
-
-    <form class="form-floating">
-        <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com"
-               value="test@example.com">
-        <label for="floatingInputValue">영화url</label>
-    </form>
-
-    <div class="input-group mb-3">
-        <label class="input-group-text" for="inputGroupSelect01">별점</label>
-        <select class="form-select" id="inputGroupSelect01">
-            <option selected>선택하기</option>
-            <option value="1">*</option>
-            <option value="2">**</option>
-            <option value="3">***</option>
-            <option value="4">****</option>
-            <option value="5">*****</option>
-        </select>
-    </div>
-
-    <div class="form-floating">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-        <label for="floatingTextarea">코멘터리</label>
-    </div>
-
-     <div class="mybtn">
-    <button type="button" class="btn btn-primary btn-sm">저장</button>
-    <button type="button" class="btn btn-secondary btn-sm">닫기</button>
-    </div>
-
-
-</div>
-
-
-
-
-
-<div class="wrap">
-            <div class="row row-cols-1 row-cols-md-4 g-4">
-                <div class="col">
-                    <div class="card">
-                        <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">제목 자리!</h5>
-                            <p class="card-text">내용 자리!!</p>
-                            <p>⭐⭐⭐</p>
-                            <p class="my_coment">코멘트 자리!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">제목 자리!</h5>
-                            <p class="card-text">내용 자리!!</p>
-                            <p>⭐⭐⭐</p>
-                            <p class="my_coment">코멘트 자리!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">제목 자리!</h5>
-                            <p class="card-text">내용 자리!!</p>
-                            <p>⭐⭐⭐</p>
-                            <p class="my_coment">코멘트 자리!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">제목 자리!</h5>
-                            <p class="card-text">내용 자리!!</p>
-                            <p>⭐⭐⭐</p>
-                            <p class="my_coment">코멘트 자리!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-</div>
-
-
-</body>
 
 </html>
