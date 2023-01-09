@@ -1,4 +1,4 @@
-
+<!--
 주제!
 HTML파일을 받았다고 가정하고, Javascript로 다시 서버에 데이터를 요청하고 받는 방법
 
@@ -11,32 +11,32 @@ Ajax를 이용해 다시 서버에 데이터를 요청하고 받아보기
 
 
 
-                                                                                                                                                                                
-
-                                                                                     
-           8 8888          .8.          `8.`888b           ,8'          .8.          
-           8 8888         .888.          `8.`888b         ,8'          .888.         
-           8 8888        :88888.          `8.`888b       ,8'          :88888.        
-           8 8888       . `88888.          `8.`888b     ,8'          . `88888.       
-           8 8888      .8. `88888.          `8.`888b   ,8'          .8. `88888.      
-           8 8888     .8`8. `88888.          `8.`888b ,8'          .8`8. `88888.     
-88.        8 8888    .8' `8. `88888.          `8.`888b8'          .8' `8. `88888.    
-`88.       8 888'   .8'   `8. `88888.          `8.`888'          .8'   `8. `88888.   
-  `88o.    8 88'   .888888888. `88888.          `8.`8'          .888888888. `88888.  
-    `Y888888 '    .8'       `8. `88888.          `8.`          .8'       `8. `88888. 
 
 
-                                                                                           
-   d888888o.       ,o888888o.    8 888888888o.    8 8888 8 888888888o   8888888 8888888888 
- .`8888:' `88.    8888     `88.  8 8888    `88.   8 8888 8 8888    `88.       8 8888       
- 8.`8888.   Y8 ,8 8888       `8. 8 8888     `88   8 8888 8 8888     `88       8 8888       
- `8.`8888.     88 8888           8 8888     ,88   8 8888 8 8888     ,88       8 8888       
-  `8.`8888.    88 8888           8 8888.   ,88'   8 8888 8 8888.   ,88'       8 8888       
-   `8.`8888.   88 8888           8 888888888P'    8 8888 8 888888888P'        8 8888       
-    `8.`8888.  88 8888           8 8888`8b        8 8888 8 8888               8 8888       
-8b   `8.`8888. `8 8888       .8' 8 8888 `8b.      8 8888 8 8888               8 8888       
-`8b.  ;8.`8888    8888     ,88'  8 8888   `8b.    8 8888 8 8888               8 8888       
- `Y8888P ,88P'     `8888888P'    8 8888     `88.  8 8888 8 8888               8 8888       
+
+           8 8888          .8.          `8.`888b           ,8'          .8.
+           8 8888         .888.          `8.`888b         ,8'          .888.
+           8 8888        :88888.          `8.`888b       ,8'          :88888.
+           8 8888       . `88888.          `8.`888b     ,8'          . `88888.
+           8 8888      .8. `88888.          `8.`888b   ,8'          .8. `88888.
+           8 8888     .8`8. `88888.          `8.`888b ,8'          .8`8. `88888.
+88.        8 8888    .8' `8. `88888.          `8.`888b8'          .8' `8. `88888.
+`88.       8 888'   .8'   `8. `88888.          `8.`888'          .8'   `8. `88888.
+  `88o.    8 88'   .888888888. `88888.          `8.`8'          .888888888. `88888.
+    `Y888888 '    .8'       `8. `88888.          `8.`          .8'       `8. `88888.
+
+
+
+   d888888o.       ,o888888o.    8 888888888o.    8 8888 8 888888888o   8888888 8888888888
+ .`8888:' `88.    8888     `88.  8 8888    `88.   8 8888 8 8888    `88.       8 8888
+ 8.`8888.   Y8 ,8 8888       `8. 8 8888     `88   8 8888 8 8888     `88       8 8888
+ `8.`8888.     88 8888           8 8888     ,88   8 8888 8 8888     ,88       8 8888
+  `8.`8888.    88 8888           8 8888.   ,88'   8 8888 8 8888.   ,88'       8 8888
+   `8.`8888.   88 8888           8 888888888P'    8 8888 8 888888888P'        8 8888
+    `8.`8888.  88 8888           8 8888`8b        8 8888 8 8888               8 8888
+8b   `8.`8888. `8 8888       .8' 8 8888 `8b.      8 8888 8 8888               8 8888
+`8b.  ;8.`8888    8888     ,88'  8 8888   `8b.    8 8888 8 8888               8 8888
+ `Y8888P ,88P'     `8888888P'    8 8888     `88.  8 8888 8 8888               8 8888
 
 
 
@@ -65,7 +65,7 @@ Ajax를 이용해 다시 서버에 데이터를 요청하고 받아보기
 			}
 		    </script>
 =============================================================
-
+-->
 
 <!--
 <script>
@@ -288,54 +288,275 @@ JQUERY란 자바스크립트를 작성해둔 라이브러리이다.
 
 
 
-                                                                                                       
-           8 8888     ,o888888o.      8 8888      88 8 8888888888   8 888888888o.   `8.`8888.      ,8' 
-           8 8888  . 8888     `88.    8 8888      88 8 8888         8 8888    `88.   `8.`8888.    ,8'  
-           8 8888 ,8 8888       `8b   8 8888      88 8 8888         8 8888     `88    `8.`8888.  ,8'   
-           8 8888 88 8888        `8b  8 8888      88 8 8888         8 8888     ,88     `8.`8888.,8'    
-           8 8888 88 8888         88  8 8888      88 8 888888888888 8 8888.   ,88'      `8.`88888'     
-           8 8888 88 8888     `8. 88  8 8888      88 8 8888         8 888888888P'        `8. 8888      
-88.        8 8888 88 8888      `8,8P  8 8888      88 8 8888         8 8888`8b             `8 8888      
-`88.       8 888' `8 8888       ;8P   ` 8888     ,8P 8 8888         8 8888 `8b.            8 8888      
-  `88o.    8 88'   ` 8888     ,88'8.    8888   ,d8P  8 8888         8 8888   `8b.          8 8888      
-    `Y888888 '        `8888888P'  `8.    `Y88888P'   8 888888888888 8 8888     `88.        8 8888      
+
+           8 8888     ,o888888o.      8 8888      88 8 8888888888   8 888888888o.   `8.`8888.      ,8'
+           8 8888  . 8888     `88.    8 8888      88 8 8888         8 8888    `88.   `8.`8888.    ,8'
+           8 8888 ,8 8888       `8b   8 8888      88 8 8888         8 8888     `88    `8.`8888.  ,8'
+           8 8888 88 8888        `8b  8 8888      88 8 8888         8 8888     ,88     `8.`8888.,8'
+           8 8888 88 8888         88  8 8888      88 8 888888888888 8 8888.   ,88'      `8.`88888'
+           8 8888 88 8888     `8. 88  8 8888      88 8 8888         8 888888888P'        `8. 8888
+88.        8 8888 88 8888      `8,8P  8 8888      88 8 8888         8 8888`8b             `8 8888
+`88.       8 888' `8 8888       ;8P   ` 8888     ,8P 8 8888         8 8888 `8b.            8 8888
+  `88o.    8 88'   ` 8888     ,88'8.    8888   ,d8P  8 8888         8 8888   `8b.          8 8888
+    `Y888888 '        `8888888P'  `8.    `Y88888P'   8 888888888888 8 8888     `88.        8 8888
 
 
 
 
 - jQuery 란?
-		- HTML의 요소들을 조작하는, 편리한 Javascript를 미리 작성해둔 것. 라이브러리!
-		- Javascript로도 모든 기능(예 - 버튼 글씨 바꾸기 등)을 구현할 수는 있지만,
-		  1) 코드가 복잡하고, 2) 브라우저 간 호환성 문제도 고려해야해서,
-		  jQuery라는 라이브러리가 등장하게 되었답니다.
+                    - HTML의 요소들을 조작하는, 편리한 Javascript를 미리 작성해둔 것. 라이브러리!
+                    - Javascript로도 모든 기능(예 - 버튼 글씨 바꾸기 등)을 구현할 수는 있지만,
+                      1) 코드가 복잡하고, 2) 브라우저 간 호환성 문제도 고려해야해서,
+                      jQuery라는 라이브러리가 등장하게 되었답니다.
 
-	jQuery는 Javascript와 다른 특별한 소프트웨어가 아니라 미리 작성된 Javascript 코드입니다. 
-	전문 개발자들이 짜둔 코드를 잘 가져와서 사용하는 것임을 기억해주세요! 
-	(그렇게 때문에, 쓰기 전에 "임포트"를 해야합니다!)
+                jQuery는 Javascript와 다른 특별한 소프트웨어가 아니라 미리 작성된 Javascript 코드입니다.
+                전문 개발자들이 짜둔 코드를 잘 가져와서 사용하는 것임을 기억해주세요!
+                (그렇게 때문에, 쓰기 전에 "임포트"를 해야합니다!)
 
-		Javascript로 길고 복잡하게 써야 하는 것을
-		document.getElementById("element").style.display = "none";
+                    Javascript로 길고 복잡하게 써야 하는 것을
+                    document.getElementById("element").style.display = "none";
 
-		jQuery로는 더 직관적으로 쓸 수 있어요.
-		$('#element').hide();
+                    jQuery로는 더 직관적으로 쓸 수 있어요.
+                    $('#element').hide();
 
-
-
-
-
-
+1. input 박스의 값을 가져와 보기
+2. div 보이기 / 숨기기
+3. 태그 내 html 입력 하기 (동적인 HTML입력하는 방법)
 
 
-                                                                                           
-         .8.                               8 8888          .8.          `8.`8888.      ,8' 
-        .888.                              8 8888         .888.          `8.`8888.    ,8'  
-       :88888.                             8 8888        :88888.          `8.`8888.  ,8'   
-      . `88888.                            8 8888       . `88888.          `8.`8888.,8'    
-     .8. `88888.                           8 8888      .8. `88888.          `8.`88888'     
-    .8`8. `88888.                          8 8888     .8`8. `88888.         .88.`8888.     
-   .8' `8. `88888.              88.        8 8888    .8' `8. `88888.       .8'`8.`8888.    
-  .8'   `8. `88888.             `88.       8 888'   .8'   `8. `88888.     .8'  `8.`8888.   
- .888888888. `88888.              `88o.    8 88'   .888888888. `88888.   .8'    `8.`8888.  
-.8'       `8. `88888.               `Y888888 '    .8'       `8. `88888. .8'      `8.`8888. 
+
+1. input 박스의 값을 가져와 보기
+
+        css에서는 <div class=''>를 만들어서 이름을 붙이는 데
+        Jquery는 ID를 쓺
+
+        콘솔창에
+        $('#url').val(입력하고 싶으쇼?')
+        입력
+        id가 url인 놈에 JQUERY를 입힐건데
+        걔의 입력된 VALUE를 가져오고 싶다는 소리다.
+                    <div class="mypost">
+                    <form class="form-floating">
+                         <input type="url" class="form-control" id="url" placeholder="URL"
+                            value="흐미양껄쩍지근하당께!">
+                        <label for="floatingInputValue">영화url</label>
+                    </form>
+                                상태에서 콘솔창에
+        $('#url').val()
+        입력하면
+        실제 HTML을 띄운 브라우저의 박스에 입력한 내용, 태그에서 먹인 VALUE가 출력 된다.
+        '흐미양껄쩍지근하당께!'
+
+input 박스를 숨기기
+
+                <div class="mypost"  id="post-box">
+                        <form class="form-floating">
+                        <input type="url" class="form-control" id="url" placeholder="URL"
+                               value="흐미양껄쩍지근하당께!">
+                        <label for="floatingInputValue">영화url</label>
+                        </form>
+                로 div class mypost 옆에 id를 넣어주고 다시 콘솔창에
+                $('#post-box').hide()
+                입력
+                브라우져 창에서 인풋박스 세트가 사라진다!
+
+input박스 다시 보이게하기
+                  $('#post-box').show()
+                 입력
+
+
+현재 수행하고 싶은 내용은 클릭하면 박스가 나오고
+사라지게 조종하고 싶은것이다.
+
+
+                <div class="wrap">
+                <div id="cards-box" class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="col">
+                <div class="card"...>
+                </div>
+                <div class="col">
+                <div class="card"...>
+                </div>
+                <div class="col">
+                <div class="card"...>
+                </div>
+
+
+-->
+<!doctype html>
+			<html lang="en">
+			<head>
+						<meta charset="utf-8">
+						<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+						<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+						integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+						<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+						<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+						integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+						crossorigin="anonymous"></script>
+			<title>제이쿼리 연습하기</title>
+
+						<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+			<style>
+							* {
+						font-family: 'Gowun Dodum', sans-serif;
+						}
+						.my_title {
+							width: 100%;
+							height: 250px;
+							background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+									url("https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg");
+							background-position: center;
+							background-size: cover;
+							color: white;
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							align-items: center;
+							margin-top: 10px;
+						}
+						.my_title > button {
+							width: 200px;
+							height: 50px;
+							background-color: transparent;
+							color: white;
+
+							border-radius: 50px;
+							border: 1px solid white;
+
+							margin-top: 10px;
+						}
+						.my_title > button:hover {
+							 border: 3px solid white;
+						}
+						.my_coment {
+							color: red;
+						}
+						.wrap {
+							max-width: 1200px;
+							width: 95%;
+							margin: 20px auto 0px auto;
+						}
+						.mypost {
+							margin: 10px auto 10px auto;
+							max-width: 500px;
+							width: 95%;
+							box-shadow: 0px 0px 3px 0px gray;
+							padding: 20px;
+						}
+						.mybtn {
+							display: flex;
+							flex-direction: row;
+							justify-content: center;
+							align-items: center;
+							margin-top: 8px;
+						}
+						.mybtn > button {
+						margin-right: 10px;
+						}
+			</style>
+
+			<script>
+
+			</script>
+
+			</head>
+
+
+			<body>
+					<div class="my_title">
+						<h1>생애의 영화들</h1>
+						<button onclick="hey()">영화 기록 하기💖</button>
+					</div>
+					<div class="mypost"  id="post-box">
+							<form class="form-floating">
+							<input type="url" class="form-control" id="url" placeholder="URL"
+								   value="흐미양껄쩍지근하당께!">
+							<label for="floatingInputValue">영화url</label>
+							</form>
+
+						<div class="input-group mb-3">
+							<label class="input-group-text" for="inputGroupSelect01">별점</label>
+							<select class="form-select" id="inputGroupSelect01">
+								<option selected>선택하기</option>
+								<option value="1">*</option>
+								<option value="2">**</option>
+								<option value="3">***</option>
+								<option value="4">****</option>
+								<option value="5">*****</option>
+							</select>
+						</div>
+
+						<div class="form-floating">
+								<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+								<label for="floatingTextarea">코멘터리</label>
+						</div>
+
+					    <div class="mybtn">
+								 <button type="button" class="btn btn-primary btn-sm">저장</button>
+								<button type="button" class="btn btn-secondary btn-sm">닫기</button>
+						</div>
+					</div>
+
+					<div class="wrap">
+						<div id="cards-box" class="row row-cols-1 row-cols-md-4 g-4">
+								<div class="col">
+								 <div class="card">
+									<img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
+										<div class="card-body">
+											 <h5 class="card-title">제목 자리!</h5>
+											 <p class="card-text">내용 자리!!</p>
+											 <p>⭐⭐⭐</p>
+											<p class="my_coment">코멘트 자리!</p>
+										</div>
+								</div>
+							</div>
+							<div class="col">
+								 <div class="card">
+										<img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
+											<div class="card-body">
+												<h5 class="card-title">제목 자리!</h5>
+												 <p class="card-text">내용 자리!!</p>
+												  <p>⭐⭐⭐</p>
+												  <p class="my_coment">코멘트 자리!</p>
+											</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card">
+										<img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
+											<div class="card-body">
+											  <h5 class="card-title">제목 자리!</h5>
+											   <p class="card-text">내용 자리!!</p>
+											   <p>⭐⭐⭐</p>
+												<p class="my_coment">코멘트 자리!</p>
+											</div>
+								</div>
+							</div>
+							<div class="col">
+								 <div class="card">
+									<img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
+									<div class="card-body">
+												<h5 class="card-title">제목 자리!</h5>
+												<p class="card-text">내용 자리!!</p>
+												 <p>⭐⭐⭐</p>
+												 <p class="my_coment">코멘트 자리!</p>
+											</div>
+								</div>
+							</div>
+						 </div>
+					</div>
+
+			</body>
+
+			</html>
+
+
+<!--
+2. div 보이기 / 숨기기
+
+
+3. 태그 내 html 입력하기 (동적인 HTML입력하는 방법)
+
 
 
