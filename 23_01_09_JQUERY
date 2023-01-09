@@ -1,3 +1,4 @@
+
 주제!
 HTML파일을 받았다고 가정하고, Javascript로 다시 서버에 데이터를 요청하고 받는 방법
 
@@ -40,31 +41,236 @@ Ajax를 이용해 다시 서버에 데이터를 요청하고 받아보기
 
 
 
+예문)		- Javascript 잠깐 복습 - 홀짝 판별 onclick 함수 만들어보기
+		    - 짝/홀수 판단하는 방법
+
+		let even = 4;
+		console.log(even % 2); // 2로 나눈 나머지가 0입니다.
+		let odd = 5;
+		console.log(odd % 2); // 2로 나눈 나머지가 1입니다.
 
 
-- Javascript 잠깐 복습 - 홀짝 판별 onclick 함수 만들어보기
-    - 짝/홀수 판단하는 방법
-        
-let even = 4;
-console.log(even % 2); // 2로 나눈 나머지가 0입니다.
-let odd = 5;
-console.log(odd % 2); // 2로 나눈 나머지가 1입니다.
-        
+
+		    - **[코드스니펫] 짝/홀수 onclick 함수(완성)**
+
+		    <script>
+			let count = 1;
+			function hey() {
+			    if (count % 2 == 0) {
+				alert('짝짝짝??');
+			    } else {
+				alert('홀홀홀??');
+			    }
+			count += 1;
+			}
+		    </script>
+=============================================================
 
 
-    - **[코드스니펫] 짝/홀수 onclick 함수(완성)**
+<!--
+<script>
+	let count = 0
+	function  hey() {
+		count += 1
+		if (count %2 == 0) {
+			alert('짝수입니다.')
+		} else {
+			alert('홀수입니다.')
+		}
+	}
+</script>
+</head>
+	클릭 횟수를 카운트하게 태그를 추가
+		let count =0
+		0부터 셀거고
+		count =+1
+		한번 클릭당 1씩 늘어나게 할거야. 라는 뜻
 
-    <script>
-        let count = 1;
-        function hey() {
-            if (count % 2 == 0) {
-                alert('짝짝짝??');
-            } else {
-                alert('홀홀홀??');
-            }
-	count += 1;
-        }
-    </script>
+
+-->
+<!--
+			<!doctype html>
+			<html lang="en">
+			<head>
+						<meta charset="utf-8">
+						<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+						<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+						integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+						<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+						<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+						integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+						crossorigin="anonymous"></script>
+			<title>제이쿼리 연습하기</title>
+
+						<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+			<style>
+							* {
+						font-family: 'Gowun Dodum', sans-serif;
+						}
+						.my_title {
+							width: 100%;
+							height: 250px;
+							background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+									url("https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg");
+							background-position: center;
+							background-size: cover;
+							color: white;
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							align-items: center;
+							margin-top: 10px;
+						}
+						.my_title > button {
+							width: 200px;
+							height: 50px;
+							background-color: transparent;
+							color: white;
+
+							border-radius: 50px;
+							border: 1px solid white;
+
+							margin-top: 10px;
+						}
+						.my_title > button:hover {
+							 border: 3px solid white;
+						}
+						.my_coment {
+							color: red;
+						}
+						.wrap {
+							max-width: 1200px;
+							width: 95%;
+							margin: 20px auto 0px auto;
+						}
+						.mypost {
+							margin: 10px auto 10px auto;
+							max-width: 500px;
+							width: 95%;
+							box-shadow: 0px 0px 3px 0px gray;
+							padding: 20px;
+						}
+						.mybtn {
+							display: flex;
+							flex-direction: row;
+							justify-content: center;
+							align-items: center;
+							margin-top: 8px;
+						}
+						.mybtn > button {
+						margin-right: 10px;
+						}
+			</style>
+
+			<script>
+				let count = 0
+				function  hey() {
+					count += 1
+					if (count %2 == 0) {
+						alert('짝수입니다.')
+					} else {
+						alert('홀수입니다.')
+					}
+				}
+			</script>
+				클릭 횟수를 카운트하게 태그를 추가
+					let count =0
+					0부터 셀거고
+					count =+1
+					한번 클릭당 1씩 늘어나게 할거야. 라는 뜻
+
+			</head>
+
+
+			<body>
+					<div class="my_title">
+						<h1>생애의 영화들</h1>
+						<button onclick="hey()">영화 기록 하기💖</button>
+					</div>
+					<div class="mypost">
+							<form class="form-floating">
+							<input type="url" class="form-control" id="floatingInputValue" placeholder="URL"
+								   value="">
+							<label for="floatingInputValue">영화url</label>
+							</form>
+
+						<div class="input-group mb-3">
+							<label class="input-group-text" for="inputGroupSelect01">별점</label>
+							<select class="form-select" id="inputGroupSelect01">
+								<option selected>선택하기</option>
+								<option value="1">*</option>
+								<option value="2">**</option>
+								<option value="3">***</option>
+								<option value="4">****</option>
+								<option value="5">*****</option>
+							</select>
+						</div>
+
+						<div class="form-floating">
+								<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+								<label for="floatingTextarea">코멘터리</label>
+						</div>
+
+					   <div class="mybtn">
+								 <button type="button" class="btn btn-primary btn-sm">저장</button>
+								<button type="button" class="btn btn-secondary btn-sm">닫기</button>
+						</div>
+					</div>
+
+					<div class="wrap">
+							<div class="row row-cols-1 row-cols-md-4 g-4">
+								<div class="col">
+								 <div class="card">
+									<img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
+										<div class="card-body">
+											 <h5 class="card-title">제목 자리!</h5>
+											 <p class="card-text">내용 자리!!</p>
+											 <p>⭐⭐⭐</p>
+											<p class="my_coment">코멘트 자리!</p>
+										</div>
+								</div>
+							</div>
+							<div class="col">
+								 <div class="card">
+										<img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
+											<div class="card-body">
+												<h5 class="card-title">제목 자리!</h5>
+												 <p class="card-text">내용 자리!!</p>
+												  <p>⭐⭐⭐</p>
+												  <p class="my_coment">코멘트 자리!</p>
+											</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card">
+										<img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
+											<div class="card-body">
+											  <h5 class="card-title">제목 자리!</h5>
+											   <p class="card-text">내용 자리!!</p>
+											   <p>⭐⭐⭐</p>
+												<p class="my_coment">코멘트 자리!</p>
+											</div>
+								</div>
+							</div>
+								<div class="col">
+									 <div class="card">
+										<img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg" class="card-img-top" alt="...">
+											<div class="card-body">
+												<h5 class="card-title">제목 자리!</h5>
+												<p class="card-text">내용 자리!!</p>
+												 <p>⭐⭐⭐</p>
+												 <p class="my_coment">코멘트 자리!</p>
+											</div>
+									</div>
+								</div>
+						 </div>
+					</div>
+
+			</body>
+
+			</html>
+-->
+<!--
 
 
 
@@ -73,6 +279,10 @@ console.log(odd % 2); // 2로 나눈 나머지가 1입니다.
     - 예를 들어 버튼의 색깔을 바꾸고 싶다면?
     - 예를 들어 div 박스를 하나 감추고 싶다면?
     - → 이런 것들 쉽게 해주는 것이, jQuery!
+
+
+JQUERY란 자바스크립트를 작성해둔 라이브러리이다.
+개발자님들 감사합니다.....
 
 
 
@@ -111,5 +321,21 @@ console.log(odd % 2); // 2로 나눈 나머지가 1입니다.
 
 
 
+
+
+
+
+
+                                                                                           
+         .8.                               8 8888          .8.          `8.`8888.      ,8' 
+        .888.                              8 8888         .888.          `8.`8888.    ,8'  
+       :88888.                             8 8888        :88888.          `8.`8888.  ,8'   
+      . `88888.                            8 8888       . `88888.          `8.`8888.,8'    
+     .8. `88888.                           8 8888      .8. `88888.          `8.`88888'     
+    .8`8. `88888.                          8 8888     .8`8. `88888.         .88.`8888.     
+   .8' `8. `88888.              88.        8 8888    .8' `8. `88888.       .8'`8.`8888.    
+  .8'   `8. `88888.             `88.       8 888'   .8'   `8. `88888.     .8'  `8.`8888.   
+ .888888888. `88888.              `88o.    8 88'   .888888888. `88888.   .8'    `8.`8888.  
+.8'       `8. `88888.               `Y888888 '    .8'       `8. `88888. .8'      `8.`8888. 
 
 
