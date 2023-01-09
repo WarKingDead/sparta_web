@@ -1093,8 +1093,8 @@ JAVASCRIPT 의 문법
 		<div class="mypost">
 
 		    <form class="form-floating">
-			<input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com"
-			       value="test@example.com">
+			<input type="url" class="form-control" id="floatingInputValue" placeholder="URL"
+			       value="">
 			<label for="floatingInputValue">영화url</label>
 		    </form>
 
