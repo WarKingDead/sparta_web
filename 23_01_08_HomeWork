@@ -1,0 +1,143 @@
+
+
+<!--
+https://getbootstrap.com/docs/5.0/components/buttons/
+에서 Card -> QUOTE 메테리얼 가져다 쓰기  = 코멘트 박스처럼 생긴 템플릿이더라-->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <!--놀라지말어 폰트 끌어오기 url임-->
+
+
+  <style>
+			    * {
+		    font-family: 'Gowun Dodum', sans-serif;
+		    }
+			.send_box {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				}
+			.my_title {
+			    width: 100%;
+			    height: 400px;
+			    background-image:linear-gradient(0deg, rgba(3, 0, 0, 0), rgba(0, 0, 0, 0.4)),
+						url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Camille_0.jpg");
+			    background-position: center 20%;
+			    background-size: cover;
+			    color: white;
+			    display: flex;
+			    flex-direction: column;
+			    justify-content: center;
+			    align-items: center;
+			    }
+			.wrap {
+				margin-left: 85px;
+				max-width: 800px;
+			}
+			.card {
+				width: 80%;
+				max-width: 800px;
+				background-color: mintcream;
+				margin: 15px;
+			}
+
+			.form-floating1{
+				margin-top: 10px;
+				width: 300px;
+			}
+			.form-floating2{
+				margin-top: 10px;
+				width: 600px;
+			}
+			.mybtn{
+			margin-top: 10px;
+			}
+			.mybtn > button {
+			  width: 200px;
+			    height: 50px;
+			    background-color: transparent;
+			    border-radius: 50px;
+			    border: 2px solid aquamarine;
+			    margin-top: 10px;
+		    }
+
+  </style>
+</head>
+
+<body>
+		    <div class="my_title">
+			<h1>롤알못인데 Camille언니 팬페이지</h1>
+		    </div>
+
+		<div class="send_box">
+  			<div class="mypost">
+		    <form class="form-floating1">
+				<label for="floatingInputValue">닉네임</label>
+				<input type="text" class="form-control" id="floatingInputValue" placeholder="Name here"
+			       value="">
+		    </form>
+		    <div class="form-floating2">
+				<label for="floatingTextarea">코멘터리</label>
+				<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+		    </div>
+		     <div class="mybtn">
+		    <button type="button" class="btn">send</button>
+		    </div>
+		</div>
+
+		<DIV class="wrap" >
+			<div class="card">
+				<div class="card-header">
+					<div class="card-body">
+			<blockquote class="blockquote mb-0">
+			  <p>필트오버 영주권 나도 줘요옷!</p>
+			  <footer class="blockquote-footer">
+				<cite title="Source Title">Kadura Jin</cite></footer>
+			</blockquote>
+					</div>
+				</div>
+			</div>
+				<div class="card">
+				<div class="card-header">
+					<div class="card-body">
+			<blockquote class="blockquote mb-0">
+			  <p>적폐챔의 권좌</p>
+			  <footer class="blockquote-footer">Nogada Jin</footer>
+			</blockquote>
+					</div>
+				</div>
+			</div>
+				<div class="card">
+				<div class="card-header">
+					<div class="card-body">
+			<blockquote class="blockquote mb-0">
+			  <p>공공칠빵! 으악</p>
+			  <footer class="blockquote-footer">
+				<cite title="Source Title">Gara Jin</cite></footer>
+			</blockquote>
+					</div>
+				</div>
+			</div>
+		</DIV>
+</div>
+
+
+</body>
+</html>
