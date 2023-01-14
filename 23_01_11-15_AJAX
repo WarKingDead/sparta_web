@@ -14,59 +14,44 @@
 
 
 
-
-
-
 서버 → 클라이언트: "JSON"을 이해하기
 서버요청 시 두가지 타입이 있는데
 GET은 단순 조회
 POST는 데이터를 가공할 떄 사용
 
+       서울시 OpenAPI를 열어보면 ↓ 이 난리가 나있음.
 
-          서울시 OpenAPI를 열어보면 ↓ 이 난리가 나있음.
-
-          {"RealtimeCityAir":{"list_total_count":25,"RESULT":{"CODE":"INFO-000","MESSAGE":"정상 처리되었습니다"},"row":[{"MSRDT":"202301111800","MSRRGN_NM":"도심권","MSRSTE_NM":"중구","PM10":0.0,"PM25":0.0,"O3":0.0,"NO2":0.0,"CO":0.0,"SO2":0.0,"IDEX_NM":"","IDEX_MVL":0.0,"ARPLT_MAIN":""},{"MSRDT":"202301111800","MSRRGN_NM":"도심권","MSRSTE_NM":"종로구","PM10":65.0,"PM25":45.0,"O3":0.003,"NO2":0.068,"CO":0.8,"SO2":0.005,"IDEX_NM":"나쁨","IDEX_MVL":132.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"도심권","MSRSTE_NM":"용산구","PM10":78.0,"PM25":49.0,"O3":0.003,"NO2":0.068,"CO":0.9,"SO2":0.004,"IDEX_NM":"나쁨","IDEX_MVL":116.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"서북권","MSRSTE_NM":"은평구","PM10":83.0,"PM25":47.0,"O3":0.004,"NO2":0.059,"CO":1.1,"SO2":0.005,"IDEX_NM":"나쁨","IDEX_MVL":105.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"서북권","MSRSTE_NM":"서대문구","PM10":53.0,"PM25":35.0,"O3":0.004,"NO2":0.066,"CO":1.0,"SO2":0.007,"IDEX_NM":"나쁨","IDEX_MVL":116.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"서북권","MSRSTE_NM":"마포구","PM10":74.0,"PM25":62.0,"O3":0.003,"NO2":0.079,"CO":0.8,"SO2":0.007,"IDEX_NM":"나쁨","IDEX_MVL":147.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"동북권","MSRSTE_NM":"광진구","PM10":74.0,"PM25":50.0,"O3":0.003,"NO2":0.055,"CO":0.7,"SO2":0.004,"IDEX_NM":"나쁨","IDEX_MVL":120.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"동북권","MSRSTE_NM":"성동구","PM10":83.0,"PM25":40.0,"O3":0.003,"NO2":0.076,"CO":0.8,"SO2":0.005,"IDEX_NM":"나쁨","IDEX_MVL":117.0,"ARPLT_MAIN":"NO2"},{"MSRDT":"202301111800","MSRRGN_NM":"동북권","MSRSTE_NM":"중랑구","PM10":55.0,"PM25":37.0,"O3":0.003,"NO2":0.072,"CO":0.7,"SO2":0.004,"IDEX_NM":"나쁨","IDEX_MVL":120.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"동북권","MSRSTE_NM":"동대문구","PM10":60.0,"PM25":40.0,"O3":0.003,"NO2":0.066,"CO":0.7,"SO2":0.005,"IDEX_NM":"나쁨","IDEX_MVL":116.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"동북권","MSRSTE_NM":"성북구","PM10":58.0,"PM25":35.0,"O3":0.004,"NO2":0.062,"CO":0.5,"SO2":0.004,"IDEX_NM":"나쁨","IDEX_MVL":109.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"동북권","MSRSTE_NM":"도봉구","PM10":32.0,"PM25":17.0,"O3":0.011,"NO2":0.045,"CO":0.5,"SO2":0.003,"IDEX_NM":"보통","IDEX_MVL":100.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"동북권","MSRSTE_NM":"강북구","PM10":38.0,"PM25":24.0,"O3":0.006,"NO2":0.046,"CO":0.7,"SO2":0.005,"IDEX_NM":"나쁨","IDEX_MVL":105.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"동북권","MSRSTE_NM":"노원구","PM10":44.0,"PM25":26.0,"O3":0.006,"NO2":0.063,"CO":0.6,"SO2":0.004,"IDEX_NM":"나쁨","IDEX_MVL":124.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"서남권","MSRSTE_NM":"강서구","PM10":115.0,"PM25":73.0,"O3":0.002,"NO2":0.068,"CO":0.8,"SO2":0.007,"IDEX_NM":"나쁨","IDEX_MVL":177.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"서남권","MSRSTE_NM":"구로구","PM10":0.0,"PM25":0.0,"O3":0.003,"NO2":0.077,"CO":0.7,"SO2":0.006,"IDEX_NM":"나쁨","IDEX_MVL":135.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"서남권","MSRSTE_NM":"영등포구","PM10":96.0,"PM25":69.0,"O3":0.002,"NO2":0.081,"CO":0.8,"SO2":0.006,"IDEX_NM":"나쁨","IDEX_MVL":162.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"서남권","MSRSTE_NM":"동작구","PM10":79.0,"PM25":56.0,"O3":0.004,"NO2":0.073,"CO":0.9,"SO2":0.004,"IDEX_NM":"나쁨","IDEX_MVL":143.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"서남권","MSRSTE_NM":"관악구","PM10":108.0,"PM25":67.0,"O3":0.004,"NO2":0.091,"CO":1.0,"SO2":0.006,"IDEX_NM":"나쁨","IDEX_MVL":133.0,"ARPLT_MAIN":"NO2"},{"MSRDT":"202301111800","MSRRGN_NM":"서남권","MSRSTE_NM":"금천구","PM10":75.0,"PM25":53.0,"O3":0.003,"NO2":0.067,"CO":0.7,"SO2":0.003,"IDEX_NM":"나쁨","IDEX_MVL":116.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"서남권","MSRSTE_NM":"양천구","PM10":123.0,"PM25":89.0,"O3":0.002,"NO2":0.071,"CO":0.8,"SO2":0.005,"IDEX_NM":"나쁨","IDEX_MVL":185.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"동남권","MSRSTE_NM":"강남구","PM10":80.0,"PM25":50.0,"O3":0.004,"NO2":0.08,"CO":0.8,"SO2":0.005,"IDEX_NM":"나쁨","IDEX_MVL":121.0,"ARPLT_MAIN":"NO2"},{"MSRDT":"202301111800","MSRRGN_NM":"동남권","MSRSTE_NM":"서초구","PM10":108.0,"PM25":80.0,"O3":0.003,"NO2":0.082,"CO":0.4,"SO2":0.004,"IDEX_NM":"나쁨","IDEX_MVL":170.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"동남권","MSRSTE_NM":"송파구","PM10":75.0,"PM25":39.0,"O3":0.003,"NO2":0.073,"CO":0.8,"SO2":0.004,"IDEX_NM":"나쁨","IDEX_MVL":132.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"동남권","MSRSTE_NM":"강동구","PM10":82.0,"PM25":54.0,"O3":0.002,"NO2":0.061,"CO":0.7,"SO2":0.004,"IDEX_NM":"나쁨","IDEX_MVL":139.0,"ARPLT_MAIN":"PM-2.5"}]}}
-
-
+          {"RealtimeCityAir":{"list_total_count":25,"RESULT":{"CODE":"INFO-000","MESSAGE":"정상 처리되었습니다"},"row":[{"MSRDT":"202301111800","MSRRGN_NM":"도심권","MSRSTE_NM":"중구","PM10":0.0,"PM25":0.0,"O3":0.0,"NO2":0.0,"CO":0.0,"SO2":0.0,"IDEX_NM":"","IDEX_MVL":0.0,"ARPLT_MAIN":""},{"MSRDT":"202301111800","MSRRGN_NM":"도심권","MSRSTE_NM":"종로구","PM10":65.0,"PM25":45.0,"O3":0.003,"NO2":0.068,"CO":0.8,"SO2":0.005,"IDEX_NM":"나쁨","IDEX_MVL":132.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"도심권","MSRSTE_NM":"용산구","PM10":78.0,"PM25":49.0,"O3":0.003,"NO2":0.068,"CO":0.9,"SO2":0.004,"IDEX_NM":"나쁨","IDEX_MVL":116.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"서북권","MSRSTE_NM":"은평구","PM10":83.0,"PM25":47.0,"O3":0.004,"NO2":0.059,"CO":1.1,"SO2":0.005,"IDEX_NM":"나쁨","IDEX_MVL":105.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"서북권","MSRSTE_NM":"서대문구","PM10":53.0,"PM25":35.0,"O3":0.004,"NO2":0.066,"CO":1.0,"SO2":0.007,"IDEX_NM":"나쁨","IDEX_MVL":116.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"서북권","MSRSTE_NM":"마포구","PM10":74.0,"PM25":62.0,"O3":0.003,"NO2":0.079,"CO":0.8,"SO2":0.007,"IDEX_NM":"나쁨","IDEX_MVL":147.0,"ARPLT_MAIN":"PM-2.5"},{"MSRDT":"202301111800","MSRRGN_NM":"동북권","MSRSTE_NM":"광진구","PM10":74.0,"PM25":50.0,"O3":0.003,"NO2":0.055,"CO":0.7,"SO2":0.004,"IDEX_NM":"나쁨","IDEX_MVL":120.0,"ARPLT_MAIN":"PM-2.5"},...
           이따위로 뜨는 데이터를
           크롬의 확장 프로그램인 Jsonview 로 정렬해서 볼 것이다.
           크롬 익스텐션 JSONView를 설치해볼까요? 그럼 좀 더 예쁘게 JSON을 볼 수 있습니다.
 
           ↓ 이렇게 정리됨
 
-이것이 바로 Json형식!
-(단순하게는 딕셔너리와 리스트의 혼합버전으로 보면 된다)
-
+        이것이 바로 Json형식!
+        (단순하게는 딕셔너리와 리스트의 혼합버전으로 보면 된다)
 
 
          RealtimeCityAir라는 키 값에
          딕셔너리 형 value가 들어가있고,
          그 안에
-                    row라는 키 값에는 리스트형 value가 들어가있습니다.
-                  {
-                  RealtimeCityAir: {
-                  list_total_count: 25,
-                  RESULT: {
-                  CODE: "INFO-000",
-                  MESSAGE: "정상 처리되었습니다"
-                  },
-                  row: [
-                  {
-                  MSRDT: "202301111800",
-                  MSRRGN_NM: "도심권",
-                  MSRSTE_NM: "중구",
-                   ...
-
-                  MSRDT: "202301111800",
-                  MSRRGN_NM: "도심권",
-                  MSRSTE_NM: "종로구",
-                  IDEX_NM: "나쁨",
-                  IDEX_MVL: 132,
-                  ARPLT_MAIN: "PM-2.5"
+                row라는 키 값에는 리스트형 value가 들어가있습니다.
+               {
+               RealtimeCityAir: {
+               row: [
+               {
+               MSRDT: "202301111800",
+               MSRRGN_NM: "도심권",
+               MSRSTE_NM: "중구",
+                    ...
+               MSRDT: "202301111800",
+               MSRRGN_NM: "도심권",
+               MSRSTE_NM: "종로구",
+               IDEX_NM: "나쁨",
+               IDEX_MVL: 132,
+                 ARPLT_MAIN: "PM-2.5"
 
       JSON은, Key:Value로 이루어져 있습니다. 자료형 Dictionary와 아주- 유사하죠
-
-
 
 클라이언트→서버: GET 요청 이해하기
 
@@ -88,12 +73,6 @@ POST는 데이터를 가공할 떄 사용
 			이 중에서 오늘은 GET 방식에 대해 배워보겠습니다. (POST는 4주차에 배웁니다)
 
 
-
-
-
-
-
-
          .8.                               8 8888          .8.          `8.`8888.      ,8'
         .888.                              8 8888         .888.          `8.`8888.    ,8'
        :88888.                             8 8888        :88888.          `8.`8888.  ,8'
@@ -108,347 +87,536 @@ POST는 데이터를 가공할 떄 사용
 
 
 
- AJAX 기본 형식
+0. 단계
+    AJAX 기본 형식
+       <SCRIPT>
 
+         $.ajax({
+         type: "GET",
+         url: "여기에URL을입력",
+         data: {},
+         success: function(response){
+         console.log(response)
+         }
+         })
 
-            <SCRIPT>
-
-            $.ajax({
-              type: "GET",
-              url: "여기에URL을입력",
-              data: {},
-              success: function(response){
-                console.log(response)
-              }
-            })
-
-            </SCRIPT>
-            GET빙식으로 이 url에 요청해서 response를 찍겠다는 뜻
+       </SCRIPT>
+       GET빙식으로 이 url에 요청해서 response를 찍겠다는 뜻
 
 
      url: "http://spartacodingclub.shop/sparta_api/seoulair",
-     로 실행한
+    에서 가져오도록 실행한
     콘솔창에서 보이는RealtimeCityAir의
     :row를 가져와 보겠다.
     ↓
 
-          <SCRIPT>
+        <SCRIPT>
 
-            $.ajax({
-              type: "GET",
-              url: "http://spartacodingclub.shop/sparta_api/seoulair",
-              data: {},
-              success: function(response){
-                console.log(response['RealtimeCityAir']['row'])
-              }
-            })
-            </SCRIPT>
-
+        $.ajax({
+        type: "GET",
+        url: "http://spartacodingclub.shop/sparta_api/seoulair",
+        data: {},
+        success: function(response){
+        console.log(response['RealtimeCityAir']['row'])
+        }
+        })
+        </SCRIPT>
 
            이렇게 하면 아까는 콘솔창에서 클릭해서 들어가야 열리던
-[리스트 형식]내용이 곧바로 콘솔창에 뜬다.
-           (25) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…},
+    [리스트 형식]내용이 곧바로 콘솔창에 뜬다.
+         ▶ (25) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…},
 
+    리스트 타입의 데이터를 구이름. 미세먼지값 두 줄로 정리하겠쓰
 
+		$.ajax({
+		type: "GET",
+		url: "http://spartacodingclub.shop/sparta_api/seoulair",
+		data: {},
+		success: function(response){
+		let rows = response['RealtimeCityAir']['row']
+		for (let i = 0; i < rows.length; i++){
+		let gu_name = rows[i]['MSRSTE_NM']
+		let gu_mise = rows[i]['IDEX_MVL']
+		console.log(gu_name, gu_mise)
+		}}})
+		</SCRIPT>
 
-리스트 타입의 데이터를 구이름. 미세먼지값 두 줄로 정리하겠쓰
+    let gu_name = rows[i]['MSRSTE_NM']
+    let gu_mise = rows[i]['IDEX_MVL']
+    row의 gu_name과 gu_mise 항목만 표시하게 부르겠다는 의미
 
-						 <SCRIPT>
+    	<script>
+        $.ajax({
+        type: "GET",
+        url: "http://spartacodingclub.shop/sparta_api/seoulair",
+        data: {},
+        success: function(response){
+        let rows = response['RealtimeCityAir']['row']
+        for (let i = 0; i < rows.length; i++){
+        let gu_name = rows[i]['MSRSTE_NM']
+        let gu_mise = rows[i]['IDEX_MVL']
+        console.log(gu_name, gu_mise)
+        }}})
+        </script>
+		</head>
 
-						  $.ajax({
-						  type: "GET",
-						  url: "http://spartacodingclub.shop/sparta_api/seoulair",
-						  data: {},
-						  success: function(response){
-							  let rows = response['RealtimeCityAir']['row']
-							  for (let i = 0; i < rows.length; i++){
-								  let gu_name = rows[i]['MSRSTE_NM']
-								  let gu_mise = rows[i]['IDEX_MVL']
-								  console.log(gu_name, gu_mise)
-								 }
-							 }
-						  })
-
-						</SCRIPT>
-
-let gu_name = rows[i]['MSRSTE_NM']
-let gu_mise = rows[i]['IDEX_MVL']
-row의 gu_name과 gu_mise 항목만 표시하게 부르겠다는 의미
-
-		<style>
-				* {
-			font-family: 'Gowun Dodum', sans-serif;
-			}
-        </style>
-    		<script>
-              $.ajax({
-              type: "GET",
-              url: "http://spartacodingclub.shop/sparta_api/seoulair",
-              data: {},
-              success: function(response){
-                  let rows = response['RealtimeCityAir']['row']
-                  for (let i = 0; i < rows.length; i++){
-                      let gu_name = rows[i]['MSRSTE_NM']
-                      let gu_mise = rows[i]['IDEX_MVL']
-                      console.log(gu_name, gu_mise)
-                     }
-                 }
-              })
-                  </script>
-			</head>
-
-
--->
-
-<!--
-
-
+0-1.단계
 이제 AJAX를 HTML에 적용해보자.
 
-서울시 OpenAPI(실시간 미세먼지 상태)를
-업데이트 버튼을 누를 때 마다 새로 가져오도록 만들것이다!
+        서울시 OpenAPI(실시간 미세먼지 상태)를
+        업데이트 버튼을 누를 때 마다 새로 가져오도록 만들것이다!
+		RealtimeCityAir: {
+		row: [
+		{
+		IDEX_MVL: 31,
+		IDEX_NM: "좋음",
+		MSRDT: "201912052100",
+		MSRRGN_NM: "도심권",
+		MSRSTE_NM: "중구",
+		},
 
-				RealtimeCityAir: {
-				row: [
-				{
-				ARPLT_MAIN: "O3",
-				CO: 0.4,
-				IDEX_MVL: 31,
-				IDEX_NM: "좋음",
-				MSRDT: "201912052100",
-				MSRRGN_NM: "도심권",
-				MSRSTE_NM: "중구",
-				NO2: 0.015,
-				O3: 0.018,
-				PM10: 22,
-				PM25: 14,
-				SO2: 0.002
-				},
-
-	이 내용을 불러오는 것
+        이 내용을 불러오는 것
 
 1. 단계
-				<head>
-					<script>
-						function q1() {
-							$.ajax({
-								type: "GET",
-								url: "http://spartacodingclub.shop/sparta_api/seoulair",
-								data: {},
-								success: function (response) {
-									console.log(response)
-								}
-							})
-						}
-					</script>
-				</head>
+		function q1() {
+		$.ajax({
+		type: "GET",
+		url: "http://spartacodingclub.shop/sparta_api/seoulair",
+		data: {},
+		success: function (response) {
+		console.log(response)
+		}})}
+		</script>
+		</head>
 페이지를 실행하고 콘솔을 켜면
 이런 애가 성공적으로 뜬다
 ↓
 {RealtimeCityAir: {…}}
 
+
 콘솔에서 얘의 row를 가져와서 태그에 넣을 것이다.
-
 2 단계
-					<script>
-						function q1() {
-							$.ajax({
-								type: "GET",
-								url: "http://spartacodingclub.shop/sparta_api/seoulair",
-								data: {},
-								success: function (response) {
-									console.log(response['RealtimeCityAir']['row'])
-																	↑
-											RealtimeCityAir의 row를 타고 들어간다는 뜻
-								}
-							})
-						}
-					</script>
-				</head>
-
+		<script>
+		function q1() {
+		$.ajax({
+		type: "GET",
+		url: "http://spartacodingclub.shop/sparta_api/seoulair",
+		data: {},
+		success: function (response) {
+console.log(response['RealtimeCityAir']['row'])
+					   ↑
+RealtimeCityAir의 row를 타고 들어간다는 뜻
+		}})}
+		</script>
+		</head>
 
 3.단계
-				<script>
-					function q1() {
-						$.ajax({
-							type: "GET",
-							url: "http://spartacodingclub.shop/sparta_api/seoulair",
-							data: {},
-							success: function (response) {
-								let rows = response['RealtimeCityAir']['row']
-								for (let i= 0; i < rows.length; i++){
-									let gu_name= rows[i] ['MSRTE_NM']
-									let gu_mise = rows[i]['IDEX_MVL']
-
-									console.log(gu_name, gu_mise)
-								}
-							}
-						})
-					}
-				</script>
+		<script>
+		function q1() {
+		$.ajax({
+		type: "GET",
+		url: "http://spartacodingclub.shop/sparta_api/seoulair",
+		data: {},
+		success: function (response) {
+		let rows = response['RealtimeCityAir']['row']
+		for (let i= 0; i < rows.length; i++){
+		let gu_name= rows[i] ['MSRTE_NM']
+		let gu_mise = rows[i]['IDEX_MVL']
+    	console.log(gu_name, gu_mise)
+		}}})}
+		</script>
 이제 콘솔에서 클릭해야 뜨는 ROW 정보가 콘솔에 바로 뜬다.
 이제 HTML페이지의 버튼을 누르면 페이지에 표시가 되도록
 temp_html을 만들어서 연결해주자
-
-
-				<script>
-					function q1() {
-						$.ajax({
-							type: "GET",
-							url: "http://spartacodingclub.shop/sparta_api/seoulair",
-							data: {},
-							success: function(response){
-								let rows = response['RealtimeCityAir']['row']
-								for (let i= 0; i < rows.length; i++){
-									let gu_name= rows[i] ['MSRTE_NM']
-									let gu_mise = rows[i]['IDEX_MVL']
-
-									let temp_html = `<li>${gu_name} : ${gu_mise}</li>`
-
-								 		작은 따옴표가 아니라 ↑` `백틱으로 감싸야한다.
-
-									$('#names-q1').append(temp_html)
-								}
-							}
-						})
-					}
-				</script>
-
-
+		<script>
+		function q1() {
+		$.ajax({
+		type: "GET",
+		url: "http://spartacodingclub.shop/sparta_api/seoulair",
+		data: {},
+		success: function(response){
+		let rows = response['RealtimeCityAir']['row']
+		for (let i= 0; i < rows.length; i++){
+		let gu_name= rows[i] ['MSRTE_NM']
+		let gu_mise = rows[i]['IDEX_MVL']
+	let temp_html = `<li>${gu_name} : ${gu_mise}</li>`
+    작은 따옴표가 아니라 ↑` `백틱으로 감싸야한다.
+            $('#names-q1').append(temp_html)
+			}}})}
+			</script>
 4.단계
-
 문제는 이게 업데이트를 누르면 불러온 데이터에 또 덧붙여서 양이 계속늘어난다.
 먼저 부른 걸 지우고 덮어 씌우도록 해야겠다.
 $('#names-q1').empty();
 를 붙이자.
-
 			<script>
 				function q1() {
-					$('#names-q1').empty();
-					$.ajax({
-						type: "GET",
-						url: "http://spartacodingclub.shop/sparta_api/seoulair",
-						data: {},
-						success: function (response) {
-						let rows = response["RealtimeCityAir"]["row"];
-						for (let i = 0; i < rows.length; i++) {
-						let gu_name = rows[i]['MSRSTE_NM'];
-						let gu_mise = rows[i]['IDEX_MVL'];
-						let temp_html = `<li>${gu_name} : ${gu_mise}</li>`
-						$('#names-q1').append(temp_html);
-							}
-						}
-					})
-				}
-			</script>
+	$('#names-q1').empty();
+		$.ajax({
+		type: "GET",
+		url: "http://spartacodingclub.shop/sparta_api/seoulair",
+		data: {},
+		success: function (response) {
+		let rows = response["RealtimeCityAir"]["row"];
+		for (let i = 0; i < rows.length; i++) {
+		let gu_name = rows[i]['MSRSTE_NM'];
+		let gu_mise = rows[i]['IDEX_MVL'];
+		let temp_html = `<li>${gu_name} : ${gu_mise}</li>`
+		$('#names-q1').append(temp_html);
+		}}})}
+		</script>
 		</head>
-
-
-
-
 5. 미세먼지 나쁨 시 빨간 색으로 표시하도록
 style에 이름표를 만들어 주고
-	<style>
+
 		.bad{
-			color : red;
+		color : red;
 		}
     </style>
 AJAX에도 일정 값이상 크면 bad가 적용되도록 함수를 걸자.
-
-
-		<script>
-			function q1() {
-				$('#names-q1').empty();
-				$.ajax({
-					type: "GET",
-					url: "http://spartacodingclub.shop/sparta_api/seoulair",
-					data: {},
-					success: function (response) {
-					let rows = response["RealtimeCityAir"]["row"];
-					for (let i = 0; i < rows.length; i++) {
-					let gu_name = rows[i]['MSRSTE_NM'];
-					let gu_mise = rows[i]['IDEX_MVL'];
-					let temp_html = `<li>${gu_name} : ${gu_mise}</li>`
-
-		if(gu_mise > 120) {
-		let temp_html = `<li class="bad">${gu_name} : ${gu_mise}</li>`
-//								↑ bad 이름표를 여기에 연결
+        <script>
+        function q1() {
+        $('#names-q1').empty();
+        $.ajax({
+        type: "GET",
+        url: "http://spartacodingclub.shop/sparta_api/seoulair",
+        data: {},
+        success: function (response) {
+        let rows = response["RealtimeCityAir"]["row"];
+        for (let i = 0; i < rows.length; i++) {
+        let gu_name = rows[i]['MSRSTE_NM'];
+        let gu_mise = rows[i]['IDEX_MVL'];
+        let temp_html = `<li>${gu_name} : ${gu_mise}</li>`
+        if(gu_mise > 120) {
+let temp_html = `<li class="bad">${gu_name} : ${gu_mise}</li>`
+//							↑ bad 이름표를 여기에 연결
 		} else {
-		let temp_html = `<li>${gu_name} : ${gu_mise}</li>`
+		 temp_html = `<li>${gu_name} : ${gu_mise}</li>`
 		}
-					$('#names-q1').append(temp_html);
-						}
-					}
-				})
-			}
+		$('#names-q1').append(temp_html);
+		}}})}
 		</script>
-
--->
-
-
-
-
+--------------------------------------------------------------------------
 <!doctype html>
 <html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <title>jQuery 연습하고 가기!</title>
-
+// JQuery를 import 합니다
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
     <style type="text/css">
         div.question-box {
-            margin: 10px 0 20px 0;
+         margin: 10px 0 20px 0;
         }
 		.bad{
-			color : red;
+		color : red;
 		}
     </style>
 
     <script>
         function q1() {
-			$('#names-q1').empty();
-			$.ajax({
-				type: "GET",
-				url: "http://spartacodingclub.shop/sparta_api/seoulair",
-				data: {},
-				success: function (response) {
-				let rows = response["RealtimeCityAir"]["row"];
-				for (let i = 0; i < rows.length; i++) {
-				let gu_name = rows[i]['MSRSTE_NM'];
-				let gu_mise = rows[i]['IDEX_MVL'];
-				let temp_html = `<li>${gu_name} : ${gu_mise}</li>`
-
-					if(gu_mise > 120) {
-						let temp_html = `<li class="bad">${gu_name} : ${gu_mise}</li>`
-					} else {
-						let temp_html = `<li>${gu_name} : ${gu_mise}</li>`
-					}
-				$('#names-q1').append(temp_html);
-					}
-				}
-			})
-        }
+		$('#names-q1').empty();
+		$.ajax({
+		type: "GET",
+		url: "http://spartacodingclub.shop/sparta_api/seoulair",
+		data: {},
+		success: function (response) {
+		let rows = response["RealtimeCityAir"]["row"];
+		for (let i = 0; i < rows.length; i++) {
+		let gu_name = rows[i]['MSRSTE_NM'];
+		let gu_mise = rows[i]['IDEX_MVL'];
+		let temp_html = `<li>${gu_name} : ${gu_mise}</li>`
+		if(gu_mise > 120) {
+		let temp_html = `<li class="bad">${gu_name} : ${gu_mise}</li>`
+		} else {
+		let temp_html = `<li>${gu_name} : ${gu_mise}</li>`
+		}
+		$('#names-q1').append(temp_html);
+		}}})}
     </script>
-</head>
-
-<body>
-    <h1>jQuery+Ajax의 조합을 연습하자!</h1>
-
-    <hr />
-
-    <div class="question-box">
+    </head>
+    <body>
+        <h1>jQuery+Ajax의 조합을 연습하자!</h1>
+        <hr/>
+        <div class="question-box">
         <h2>1. 서울시 OpenAPI(실시간 미세먼지 상태)를 이용하기</h2>
         <p>모든 구의 미세먼지를 표기해주세요</p>
         <p>업데이트 버튼을 누를 때마다 지웠다 새로 씌여져야 합니다.</p>
         <button onclick="q1()">업데이트</button>
         <ul id="names-q1">
-            <li>아예 < li > < / li >를 지우면 빈칸으로 시작하게 됨</li>
-            <li>종로구 : 87</li>
-            <li>용산구 : 84</li>
-
+         <li>아예 < li > < / li >를 지우면 빈칸으로 시작하게 됨</li>
+         <li>종로구 : 87</li>
+         <li>용산구 : 84</li>
         </ul>
+    </div>
+    </body>
+    </html>
+--------------------------------------------------------------------------
+
+
+
+따릉이
+
+
+http://spartacodingclub.shop/sparta_api/seoulbike
+서울시 OpenAPI(실시간 따릉이 현황)을 이용하기
+
+일단 url가서 보면
+    row: [
+    parkingBikeTotCnt: 3,
+    rackTotCnt: 22,
+    shared: 19,
+    stationName: "302. 경복궁역 4번출구 뒤"
+    },
+라고 뜬다.
+
+리스트에 불러와야할 항목은
+    거치대 위치 = stationName: 302. 경복궁역 4번출구 뒤
+    거치대 수 = rackTotCnt: 22
+    현재 거치된 따릉이 수 = parkingBikeTotCnt: 3
+니께 타겟은 특정됐으니 row를 가져와보자고오
+
+
+        function q1() {
+		$('#names-q1').empty();
+		$.ajax
+        ({
+		type: "GET",
+		url: "http://spartacodingclub.shop/sparta_api/seoulbike",
+        data: {},
+        success: function(response
+        ){
+        console.log(response)
+        }
+        })
+        }
+        </script>
+을 넣고 브라우져 -> 콘솔 -> 업데이트 버튼을 누르면
+▶ {getStationList: {…}} 가 뜨고
+   ▶ getStationList:
+    ▶ row: Array(1116)
+    row가 있는 위치는 getStationList인 것을 확인, getStationList를 가져온다.
+
+        function q1() {
+		$('#names-q1').empty();
+		$.ajax
+        ({
+		type: "GET",
+		url: "http://spartacodingclub.shop/sparta_api/seoulbike",
+        data: {},
+        success: function(response){
+        console.log(response['getStationList']['row'])
+        }
+        })
+        }
+        </script>
+로 콘솔을 실행하면
+        (1116) [{…}, {…},
+가 뜨는 거 확인!
+
+이제 for문으로 돌려서
+        거치대 위치 = stationName: 302. 경복궁역 4번출구 뒤
+        거치대 수 = rackTotCnt: 22
+        현재 거치된 따릉이 수 = parkingBikeTotCnt: 3
+내용을 가져오자,
+    for (let i =0; i< rows.length; i++){
+                let name = rows[i]['stationName']
+    이름은 name으로 rows의 i번째의 ' ' 을 가져오고
+    이름을 rack으로 rows의 i번째의 ' '을 가져오고~ 이런 느낌의 문장임
+콘솔로 한번 제대로 가져오는 지 테스트해보자
+
+        function q1() {
+		$('#names-q1').empty();
+		$.ajax
+        ({
+		type: "GET",
+		url: "http://spartacodingclub.shop/sparta_api/seoulbike",
+        data: {},
+        success: function(response){
+            let rows =response['getStationList']['row']
+            for (let i =0; i < rows.length; i++){
+                let name = rows[i]['stationName']
+                let rack = rows[i]['rackTotCnt']
+                let bike = rows[i]['parkingBikeTotCnt']
+
+                console.log(name, rack,bike)
+            }
+        }
+        })
+        }
+        </script>
+콘솔 실행해보면 아래처럼 제대로 뜬다.
+성공이다.
+        301. 경복궁역 7번출구 앞 20 13
+        302. 경복궁역 4번출구 뒤 22 3 ...
+이제 콘솔은 지우고 temp_html만들어서 AJAX랑 html을 붙여주자
+
+        +
+
+        let temp_html로 AJAX랑 HTML을 연결하는데
+        = `<tr>
+        <td>${name}</td>
+        <td>${rack}</td>
+        <td>${bike}</td>
+        </tr>`
+↗이 내용을
+↓ <body>안에 있는 names-q1 클래스 이름이 붙은
+            <table>
+            <thead>
+            <tr>
+            <td>거치대 위치</td>
+            <td>거치대 수</td>
+            <td>현재 거치된 따릉이 수</td>
+            </tr>
+↗ 여기에 있는 내용대로
+            </thead>
+            <tbody id="names-q1">
+↗이 부분에다가 !!!!!!!!!!!!
+여기에 다가 불러다가 붙이겠다는 문장임
+$('#names-q1').append(temp_html)
+            </tbody>
+            </table>
+        +
+업데이트 누를 때마다 덮어쓰도록
+$('#names-q1').empty();
+태그도 붙여줌
+
+        function q1() {
+		$('#names-q1').empty();
+		$.ajax
+        ({
+		type: "GET",
+		url: "http://spartacodingclub.shop/sparta_api/seoulbike",
+        data: {},
+        success: function(response){
+            let rows =response['getStationList']['row']
+            for (let i =0; i < rows.length; i++){
+                let name = rows[i]['stationName']
+                let rack = rows[i]['rackTotCnt']
+                let bike = rows[i]['parkingBikeTotCnt']
+
+                let temp_html = `<tr>
+                                <td>${name}</td>
+                                <td>${rack}</td>
+                                <td>${bike}</td>
+                                </tr>`
+                $('#names-q1').append(temp_html)
+            }        }        })
+        }
+    </script>
+
+이제 일정 갯수보다 적으면 빨간 색으로 표기 되도록
+CSS를 연결해주자.
+AJAX 관련 태그는 모두 <SCRIPT>안에서만 한다.
+이름을 설정하는 거 아니면 <body>로 내려 갈일은 없음.
+
+우선은 <div class=''>같은 문법으로 <head>에 복붙한
+            <script>
+            ...
+            let temp_html = ' <tr여기 안에다가 class =''을 만들어준다 > '
+            ...
+일단 이 상태에서 저장해서 빨간색으로 적용되는 지 보고
+문제 없으면 script안에 temp_html에 연결할 css를 적어 넣어준다.
+
+
+
+
+
+
+--------------------------------------------------------------------------
+-->
+
+
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery 연습하고 가기!</title>
+    <!-- JQuery를 import 합니다 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style type="text/css">
+        div.question-box {
+            margin: 10px 0 20px 0;
+        }
+        table {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+        td,
+        th {
+            padding: 10px;
+            border: 1px solid;
+        }
+        .urgent{
+            color : red;
+        }
+</style>
+
+<script>
+
+        function q1() {
+		$('#names-q1').empty();
+		$.ajax
+        ({
+		type: "GET",
+		url: "http://spartacodingclub.shop/sparta_api/seoulbike",
+        data: {},
+        success: function(response){
+            let rows =response['getStationList']['row']
+            for (let i =0; i < rows.length; i++){
+                let name = rows[i]['stationName']
+                let rack = rows[i]['rackTotCnt']
+                let bike = rows[i]['parkingBikeTotCnt']
+
+                let temp_html = ''
+//                      ↑ temp_html을 만드는데.. 라는 문장임
+                if (bike < 5) {
+ //                      ↑ 자전거가 5대 미만이면- 이라고 조건을 붙인다.
+                   temp_html = `<tr class="urgent">
+                                <td>${name}</td>
+                                <td>${rack}</td>
+                                <td>${bike}</td>
+                                </tr>`
+                } else{
+ //                              ↓ 여기서는 css가 적용 안되게 class명을 빼준다.
+                  temp_html =  `<tr>
+                                <td>${name}</td>
+                                <td>${rack}</td>
+                                <td>${bike}</td>
+                                </tr>`
+                }
+                $('#names-q1').append(temp_html)
+            }
+        }
+        })
+        }
+</script>
+
+
+
+</head>
+
+<body>
+    <h1>jQuery + Ajax의 조합을 연습하자!</h1>
+    <hr />
+    <div class="question-box">
+        <h2>2. 서울시 OpenAPI(실시간 따릉기 현황)를 이용하기</h2>
+        <p>모든 위치의 따릉이 현황을 보여주세요</p>
+        <p>업데이트 버튼을 누를 때마다 지웠다 새로 씌여져야 합니다.</p>
+        <button onclick="q1()">업데이트</button>
+        <table>
+            <thead>
+                <tr>
+                    <td>거치대 위치</td>
+                    <td>거치대 수</td>
+                    <td>현재 거치된 따릉이 수</td>
+                </tr>
+            </thead>
+            <tbody id="names-q1">
+            </tbody>
+        </table>
     </div>
 </body>
 
