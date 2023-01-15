@@ -1,0 +1,226 @@
+
+<!--
+
+                                             .         .
+8 8888        8     ,o888888o.              ,8.       ,8.          8 8888888888   `8.`888b                 ,8'     ,o888888o.     8 888888888o.   8 8888     ,88'
+8 8888        8  . 8888     `88.           ,888.     ,888.         8 8888          `8.`888b               ,8'   . 8888     `88.   8 8888    `88.  8 8888    ,88'
+8 8888        8 ,8 8888       `8b         .`8888.   .`8888.        8 8888           `8.`888b             ,8'   ,8 8888       `8b  8 8888     `88  8 8888   ,88'
+8 8888        8 88 8888        `8b       ,8.`8888. ,8.`8888.       8 8888            `8.`888b     .b    ,8'    88 8888        `8b 8 8888     ,88  8 8888  ,88'
+8 8888        8 88 8888         88      ,8'8.`8888,8^8.`8888.      8 888888888888     `8.`888b    88b  ,8'     88 8888         88 8 8888.   ,88'  8 8888 ,88'
+8 8888        8 88 8888         88     ,8' `8.`8888' `8.`8888.     8 8888              `8.`888b .`888b,8'      88 8888         88 8 888888888P'   8 8888 88'
+8 8888888888888 88 8888        ,8P    ,8'   `8.`88'   `8.`8888.    8 8888               `8.`888b8.`8888'       88 8888        ,8P 8 8888`8b       8 888888<
+8 8888        8 `8 8888       ,8P    ,8'     `8.`'     `8.`8888.   8 8888                `8.`888`8.`88'        `8 8888       ,8P  8 8888 `8b.     8 8888 `Y8.
+8 8888        8  ` 8888     ,88'    ,8'       `8        `8.`8888.  8 8888                 `8.`8' `8,`'          ` 8888     ,88'   8 8888   `8b.   8 8888   `Y8.
+8 8888        8     `8888888P'     ,8'         `         `8.`8888. 8 888888888888          `8.`   `8'              `8888888P'     8 8888     `88. 8 8888     `Y8.
+
+
+숙제버전의 차이점은
+버튼을 눌러서 새로 불러오는 것이 아니라
+페이지를 로딩하면 바로 AJAX를 가져와서 띄우고 새로고침을 해야 덮어쓰기하는 방식임.
+
+
+
+=날씨 APi 가져와서 띄우기=
+        http://spartacodingclub.shop/sparta_api/weather/seoul
+
+                {
+                city: "Seou",
+                clouds: "17%",
+                icon: "http://openweathermap.org/img/w/02d.png",
+                temp: 33.7
+                }
+         가져와야할 항목이 temp 임을 확인.
+
+이전에는 리스트라 줄줄이 뭔가 ㅈㄴ 길게 불러왔는데
+지금은 도시 하나만 특정해서 온도를 표기하는 방식이라
+for (let i =0; i < rows.length; i++){
+     let name = rows[i]['stationName']...
+이딴거 없어도 됨
+
+
+=로딩 후 호출하기=
+(아직 버튼을 눌러서 부르는 게 아니라 알아서 부르는 방법을 안배웠으니께 얼럿부터해보자는)
+굳이 얼럿 이걸 왜 하는 지 이해 아직 안됨
+        $(document).ready(function(){
+          alert('다 로딩됐다!')
+        });
+
+
+1.단계
+id를 부여해서 AJAX를 불러다가 띄울 자리 만들기
+- 텍스트 바꾸기 : `$('#아이디값').text(바꾸고 싶은 텍스트); 를 활용
+
+        <p>현재 기온 : <span id="temp"> 00.00도</span></p>
+        를 삽입
+
+        <script></script>
+        생성 ↓
+
+ <script>
+      $(document).ready(function (){
+         $.ajax
+        ({
+          type: "GET",
+          url: "http://spartacodingclub.shop/sparta_api/weather/seoul",
+          data: {},
+          success: function (response) {
+          $('#temp').text(response['temp'])
+//          이건 또 뭐야 ㅅㅂ ↑  console.log(response['RealtimeCityAir']['row'])랑 짬뽕이고 ㅈㄹ이야
+          }
+        })
+      })
+ </script>
+
+-->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <!-- JQuery를 import 합니다 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+ <script>
+      $(document).ready(function (){
+         $.ajax
+        ({
+          type: "GET",
+          url: "http://spartacodingclub.shop/sparta_api/weather/seoul",
+          data: {},
+          success: function (response) {
+          $('#temp').text(response['temp'])
+          }
+        })
+      })
+ </script>
+
+  <style>
+			    * {
+		    font-family: 'Gowun Dodum', sans-serif;
+		    }
+			.send_box {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				}
+			.my_title {
+			    width: 100%;
+			    height: 400px;
+			    background-image:linear-gradient(0deg, rgba(3, 0, 0, 0), rgba(0, 0, 0, 0.4)),
+						url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Camille_0.jpg");
+			    background-position: center 20%;
+			    background-size: cover;
+			    color: white;
+			    display: flex;
+			    flex-direction: column;
+			    justify-content: center;
+			    align-items: center;
+			    }
+			.wrap {
+				margin-left: 85px;
+				max-width: 800px;
+			}
+			.card {
+				width: 80%;
+				max-width: 800px;
+				background-color: mintcream;
+				margin: 15px;
+			}
+			.form-floating1{
+				margin-top: 10px;
+				width: 300px;
+			}
+			.form-floating2{
+				margin-top: 10px;
+				width: 600px;
+			}
+			.mybtn{
+			margin-top: 10px;
+			}
+			.mybtn > button {
+			  width: 200px;
+			    height: 50px;
+			    background-color: transparent;
+			    border-radius: 50px;
+			    border: 2px solid aquamarine;
+			    margin-top: 10px;
+		    }
+
+  </style>
+</head>
+
+<body>
+		    <div class="my_title">
+			<h1>롤알못인데 Camille언니 팬페이지</h1>
+		    <p>현재 기온 : <span id="temp">00.00도</span></p>
+
+            </div>
+
+		<div class="send_box">
+  			<div class="mypost">
+		    <form class="form-floating1">
+				<label for="floatingInputValue">닉네임</label>
+				<input type="text" class="form-control" id="floatingInputValue" placeholder="Name here"
+			       value="">
+		    </form>
+		    <div class="form-floating2">
+				<label for="floatingTextarea">코멘터리</label>
+				<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+		    </div>
+		     <div class="mybtn">
+		    <button type="button" class="btn">send</button>
+		    </div>
+		</div>
+
+		<DIV class="wrap" >
+			<div class="card">
+				<div class="card-header">
+					<div class="card-body">
+			<blockquote class="blockquote mb-0">
+			  <p>필트오버 영주권 나도 줘요옷!</p>
+			  <footer class="blockquote-footer">
+				<cite title="Source Title">Kadura Jin</cite></footer>
+			</blockquote>
+					</div>
+				</div>
+			</div>
+				<div class="card">
+				<div class="card-header">
+					<div class="card-body">
+			<blockquote class="blockquote mb-0">
+			  <p>적폐챔의 권좌</p>
+			  <footer class="blockquote-footer">Nogada Jin</footer>
+			</blockquote>
+					</div>
+				</div>
+			</div>
+				<div class="card">
+				<div class="card-header">
+					<div class="card-body">
+			<blockquote class="blockquote mb-0">
+			  <p>공공칠빵! 으악</p>
+			  <footer class="blockquote-footer">
+				<cite title="Source Title">Gara Jin</cite></footer>
+			</blockquote>
+					</div>
+				</div>
+			</div>
+		</DIV>
+</div>
+
+
+</body>
+</html>
