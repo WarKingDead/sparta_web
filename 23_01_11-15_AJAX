@@ -914,6 +914,76 @@ id를 부여해서 AJAX를 불러다가 띄울 자리 만들기
       })
  </script>
 
+
+
+
+
+
+
+
+ <<해설>>
+
+
+        $(document).ready(function(){
+            $.ajax({
+                type: "GET",
+                url:"http://spartacodingclub.shop/sparta_api/weather/seoul",
+                data:{},
+                success:function(response) {
+                console.log(response)
+                }
+
+            })
+        })
+
+
+를 넣으면 콘솔에서
+        Object city:"Seoul"
+        clouds:"0%"
+        icon:"http://openweathermap.org/img/w/01d.png"
+        temp:-2.81
+        [[Prototype]]:Object
+로 잘 뜨는 것을 확인 가능
+이 중에서 필요한 것은 temp:인 것을 확인 완료
+
+        $(document).ready(function(){
+            $.ajax({
+                type: "GET",
+                url:"http://spartacodingclub.shop/sparta_api/weather/seoul",
+                data:{},
+                success:function(response) {
+                let temp = response ['temp']
+                console.log(temp)
+                }
+            })
+        })
+
+console.log(response)  --->  console.log(temp)
+로 변경하는 것에 주목.
+
+-2.81 로 뜨는 것을 확인
+
+
+다 temp 지랄이라서 헷갈릴 수 있으니 정리!
+        $(document).ready(function(){
+            $.ajax({
+                type: "GET",
+                url:"http://spartacodingclub.shop/sparta_api/weather/seoul",
+                data:{},
+                success:function(response) {
+                let temp = response ['temp']
+//                                      ↖ 서버에서 가져온 데이터 이름
+//                              ↙ 이건 변수고
+                $('#temp').text(temp)
+//                  ↖ 이건 body 에 있는 id인 temp를 의미한다.
+                }
+            })
+        })
+
+
+
+
+
 -->
 
 <!doctype html>
