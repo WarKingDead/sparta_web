@@ -1,0 +1,296 @@
+
+                                                                                                         
+8 888888888o   `8.`8888.      ,8' 8888888 8888888888 8 8888        8     ,o888888o.     b.             8 
+8 8888    `88.  `8.`8888.    ,8'        8 8888       8 8888        8  . 8888     `88.   888o.          8 
+8 8888     `88   `8.`8888.  ,8'         8 8888       8 8888        8 ,8 8888       `8b  Y88888o.       8 
+8 8888     ,88    `8.`8888.,8'          8 8888       8 8888        8 88 8888        `8b .`Y888888o.    8 
+8 8888.   ,88'     `8.`88888'           8 8888       8 8888        8 88 8888         88 8o. `Y888888o. 8 
+8 888888888P'       `8. 8888            8 8888       8 8888        8 88 8888         88 8`Y8o. `Y88888o8 
+8 8888               `8 8888            8 8888       8 8888888888888 88 8888        ,8P 8   `Y8o. `Y8888 
+8 8888                8 8888            8 8888       8 8888        8 `8 8888       ,8P  8      `Y8o. `Y8 
+8 8888                8 8888            8 8888       8 8888        8  ` 8888     ,88'   8         `Y8o.` 
+8 8888                8 8888            8 8888       8 8888        8     `8888888P'     8            `Yo 
+
+
+
+파이참에서 파이썬을 실행할 때는 우클릭 실행을 눌러줘야
+뻘짓 없이 실행된다. 어휴
+
+들여쓰기 틀리면 지랄남. 유의할 것
+
+
+
+print('hello god damn python')
+
+
+
+● 1 변수
+● 2 자료형
+● 3 함수
+● 4 조건문
+● 5 반복문
+
+
+
+● 변수 
+        변수 선언
+        a = 2
+        b = 3
+        >> 선언 완료
+
+        print(a+b)
+        >> 5나오고 끝.
+
+● 자료형
+    1. 리스트
+        a_list = ['사과', '배', '감']
+        print(a_list[1])
+        >> 2번째 요소인 배가 나오겠지
+
+        요소 추가
+        a_list.append('수박')
+        >> print(a_list) 해보면 ['사과', '배', '감','수박'] 나오겠지
+        >> 으이그 뻔하다 뻔해
+
+    2.딕셔너리
+        a_dict = {
+        'name':'bob',
+        'age;:27
+        }
+
+        print(a_dict['name']
+        >> bob나오겠지 뭐.
+
+● 함수
+        def sum(a,b):
+        return a+b
+        >> definition=def 정의 이고
+
+        result = sum(1,2)
+        print(result)
+        >> return은 나를 = 이색히로 변신시켜라 라는 뜻
+        >> 3으로 결과 나오겠지 뭐 어휴 뻔해
+
+        ----------------------------------------
+        def sum(a,b):
+        print('더하자!')
+        return a+b
+
+        result = sum(1,2)
+        print(result)
+        >> 이걸 실행하면
+        >>  더하자를 출력하라가 먼저 실행되고 그 다음에 sum이 실행되어서
+        >>  오류 없이
+            더하자!
+            3
+            이 출력됨.
+
+
+● 조건문
+        def is_adult(age):
+            if age > 20:
+                print('성인입니다')
+            else:
+                print('미성년자입니다')
+
+        is_adult(29)
+        >>  성인입니다  뜨겠지 어휴...
+
+
+● 반복문
+
+        fruits = ['사과','배','배','감','수박','귤','딸기','사과','배','수박']
+
+        count = 0
+        for fff in fruits:
+            if fff == '사과':
+                count += 1
+
+        print(count)
+
+        >>  만역 ff가 사과라면 count를 하나 늘려줘
+            라는 소리고
+        >>  프린트를 실행하면
+            사과
+            배
+            배
+            감
+            수박
+            귤
+            딸기
+            사과
+            배
+            수박
+            2
+            로 프린트 된다
+
+        ----------------------------------------
+
+
+people = [{'name': 'bob', 'age': 20},
+          {'name': 'carry', 'age': 38},
+          {'name': 'john', 'age': 7},
+          {'name': 'smith', 'age': 17},
+          {'name': 'ben', 'age': 27}]
+          >>  people이라는 리스트 안에 name과 age의 요소를 가진
+              딕셔너리가 총 5개 들어가 있는 상태다.
+
+        for person in people:
+            print(person)
+        >>  하나씩 꺼내서 쓰겠다는 뜻이다.
+
+        for 444 in people:
+            if 444['age'] > 20:
+                print(444['name'])
+        >> 만약 444에서 age가 20보다 크다면
+           444의 name을 출력하라 라는 뜻
+
+        >>  carry
+            ben
+            만 출력되어서 나온다.
+
+
+
+
+
+                                                                                                                               
+8 888888888o            .8.              ,o888888o.    8 8888     ,88'          .8.               ,o888888o.    8 8888888888   
+8 8888    `88.         .888.            8888     `88.  8 8888    ,88'          .888.             8888     `88.  8 8888         
+8 8888     `88        :88888.        ,8 8888       `8. 8 8888   ,88'          :88888.         ,8 8888       `8. 8 8888         
+8 8888     ,88       . `88888.       88 8888           8 8888  ,88'          . `88888.        88 8888           8 8888         
+8 8888.   ,88'      .8. `88888.      88 8888           8 8888 ,88'          .8. `88888.       88 8888           8 888888888888 
+8 888888888P'      .8`8. `88888.     88 8888           8 8888 88'          .8`8. `88888.      88 8888           8 8888         
+8 8888            .8' `8. `88888.    88 8888           8 888888<          .8' `8. `88888.     88 8888   8888888 8 8888         
+8 8888           .8'   `8. `88888.   `8 8888       .8' 8 8888 `Y8.       .8'   `8. `88888.    `8 8888       .8' 8 8888         
+8 8888          .888888888. `88888.     8888     ,88'  8 8888   `Y8.    .888888888. `88888.      8888     ,88'  8 8888         
+8 8888         .8'       `8. `88888.     `8888888P'    8 8888     `Y8. .8'       `8. `88888.      `8888888P'    8 888888888888 
+
+
+패키지 설치 필요!
+vitual enviroment = venv
+가상환경 패키지라고 쓰고
+라이브러리라고 읽는다.
+버전이 많을 경우 한글 07 한글 23처럼 ㅅㅂ 골치아픈 문제를 
+해결하기 위한 방법임
+
+
+파일 -> 설정 -> 좌측 메누 중 프로젝트이름 선택 -> 인터프리터 선택->
+패키지 추가인 + 선택 -> REQUESTS를 입력 -> 좌측하단 설치 클릭,,
+
+AJAX역할을 하는 놈임
+
+
+
+
+
+         .8.          8 888888888o    8 8888
+        .888.         8 8888    `88.  8 8888
+       :88888.        8 8888     `88  8 8888
+      . `88888.       8 8888     ,88  8 8888
+     .8. `88888.      8 8888.   ,88'  8 8888
+    .8`8. `88888.     8 888888888P'   8 8888
+   .8' `8. `88888.    8 8888          8 8888
+  .8'   `8. `88888.   8 8888          8 8888
+ .888888888. `88888.  8 8888          8 8888
+.8'       `8. `88888. 8 8888          8 8888
+
+REQUESTS로 API 읽어 들이기 해봅세
+
+
+html에서 했던 미세먼지  API생각해보면 row의 항목들을 (상태 지역 구이름...)
+쭉 반복해서 돌아가면서 읽어오는 방식이었단 말이지.
+
+
+            import requests
+                        # requests 라이브러리 설치 필요
+            r = requests.get('http://spartacodingclub.shop/sparta_api/seoulair')
+            rjson = r.json()
+
+        >> {'RealtimeCityAir': {'row': [{'ARPLT_MAIN': 'O3', 'CO': 0.4, 'IDEX_MVL': 31, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '도심권', 'MSRSTE_NM': '중구', 'NO2': 0.015, 'O3': 0.018, 'PM10': 22, 'PM25': 14, 'SO2': 0.002}, {'ARPLT_MAIN': 'PM25', 'CO': 0.4, 'IDEX_MVL': 39, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '도심권', 'MSRSTE_NM': '종로구', 'NO2': 0.016, 'O3': 0.013, 'PM10': 24, 'PM25': 18, 'SO2': 0.003}, {'ARPLT_MAIN': '점검중', 'CO': 0.4, 'IDEX_MVL': -99, 'IDEX_NM': '점검중', 'MSRDT': '201912052100', 'MSRRGN_NM': '도심권', 'MSRSTE_NM': '용산구', 'NO2': 0.027, 'O3': 0.012, 'PM10': 0, 'PM25': 15, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM10', 'CO': 0.5, 'IDEX_MVL': 42, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서북권', 'MSRSTE_NM': '은평구', 'NO2': 0.018, 'O3': 0.019, 'PM10': 36, 'PM25': 14, 'SO2': 0.005}, {'ARPLT_MAIN': 'PM10', 'CO': 0.6, 'IDEX_MVL': 37, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서북권', 'MSRSTE_NM': '서대문구', 'NO2': 0.015, 'O3': 0.018, 'PM10': 28, 'PM25': 9, 'SO2': 0.004}, {'ARPLT_MAIN': 'NO2', 'CO': 0.5, 'IDEX_MVL': 36, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서북권', 'MSRSTE_NM': '마포구', 'NO2': 0.021, 'O3': 0.012, 'PM10': 26, 'PM25': 8, 'SO2': 0.003}, {'ARPLT_MAIN': 'O3', 'CO': 0.6, 'IDEX_MVL': 31, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동북권', 'MSRSTE_NM': '광진구', 'NO2': 0.016, 'O3': 0.018, 'PM10': 17, 'PM25': 9, 'SO2': 0.001}, {'ARPLT_MAIN': 'PM25', 'CO': 0.4, 'IDEX_MVL': 33, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동북권', 'MSRSTE_NM': '성동구', 'NO2': 0.017, 'O3': 0.018, 'PM10': 21, 'PM25': 12, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM10', 'CO': 0.4, 'IDEX_MVL': 34, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동북권', 'MSRSTE_NM': '중랑구', 'NO2': 0.019, 'O3': 0.015, 'PM10': 27, 'PM25': 10, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM10', 'CO': 0.4, 'IDEX_MVL': 34, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동북권', 'MSRSTE_NM': '동대문구', 'NO2': 0.017, 'O3': 0.016, 'PM10': 26, 'PM25': 9, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM10', 'CO': 0.5, 'IDEX_MVL': 37, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동북권', 'MSRSTE_NM': '성북구', 'NO2': 0.014, 'O3': 0.022, 'PM10': 27, 'PM25': 8, 'SO2': 0.003}, {'ARPLT_MAIN': 'O3', 'CO': 0.3, 'IDEX_MVL': 41, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동북권', 'MSRSTE_NM': '도봉구', 'NO2': 0.011, 'O3': 0.024, 'PM10': 25, 'PM25': 12, 'SO2': 0.002}, {'ARPLT_MAIN': 'PM10', 'CO': 0.4, 'IDEX_MVL': 39, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동북권', 'MSRSTE_NM': '강북구', 'NO2': 0.02, 'O3': 0.022, 'PM10': 30, 'PM25': 15, 'SO2': 0.002}, {'ARPLT_MAIN': 'PM25', 'CO': 0.4, 'IDEX_MVL': 36, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동북권', 'MSRSTE_NM': '노원구', 'NO2': 0.016, 'O3': 0.017, 'PM10': 21, 'PM25': 14, 'SO2': 0.004}, {'ARPLT_MAIN': 'PM10', 'CO': 0.4, 'IDEX_MVL': 42, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서남권', 'MSRSTE_NM': '강서구', 'NO2': 0.013, 'O3': 0.021, 'PM10': 36, 'PM25': 16, 'SO2': 0.004}, {'ARPLT_MAIN': 'O3', 'CO': 0.3, 'IDEX_MVL': 37, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서남권', 'MSRSTE_NM': '구로구', 'NO2': 0.016, 'O3': 0.022, 'PM10': 23, 'PM25': 10, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM10', 'CO': 0.4, 'IDEX_MVL': 41, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서남권', 'MSRSTE_NM': '영등포구', 'NO2': 0.022, 'O3': 0.01, 'PM10': 29, 'PM25': 15, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM10', 'CO': 0.4, 'IDEX_MVL': 41, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서남권', 'MSRSTE_NM': '동작구', 'NO2': 0.023, 'O3': 0.012, 'PM10': 29, 'PM25': 15, 'SO2': 0.003}, {'ARPLT_MAIN': 'NO2', 'CO': 0.4, 'IDEX_MVL': 37, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서남권', 'MSRSTE_NM': '관악구', 'NO2': 0.022, 'O3': 0.012, 'PM10': 27, 'PM25': 12, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM25', 'CO': 0.4, 'IDEX_MVL': 43, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서남권', 'MSRSTE_NM': '금천구', 'NO2': 0.02, 'O3': 0.015, 'PM10': 25, 'PM25': 15, 'SO2': 0.004}, {'ARPLT_MAIN': '점검중', 'CO': 0.4, 'IDEX_MVL': -99, 'IDEX_NM': '점검중', 'MSRDT': '201912052100', 'MSRRGN_NM': '서남권', 'MSRSTE_NM': '양천구', 'NO2': 0.017, 'O3': 0.016, 'PM10': 0, 'PM25': 14, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM10', 'CO': 0.4, 'IDEX_MVL': 39, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동남권', 'MSRSTE_NM': '강남구', 'NO2': 0.018, 'O3': 0.018, 'PM10': 31, 'PM25': 16, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM10', 'CO': 0.3, 'IDEX_MVL': 41, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동남권', 'MSRSTE_NM': '서초구', 'NO2': 0.019, 'O3': 0.024, 'PM10': 34, 'PM25': 13, 'SO2': 0.003}, {'ARPLT_MAIN': 'NO2', 'CO': 0.4, 'IDEX_MVL': 42, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동남권', 'MSRSTE_NM': '송파구', 'NO2': 0.025, 'O3': 0.014, 'PM10': 25, 'PM25': 6, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM25', 'CO': 0.4, 'IDEX_MVL': 39, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동남권', 'MSRSTE_NM': '강동구', 'NO2': 0.02, 'O3': 0.016, 'PM10': 24, 'PM25': 14, 'SO2': 0.002}]}}
+             가 뜬다.
+
+        >> 가져와야하는 놈 이름이  RealtimeCityAir 인걸 확인
+            ↓
+
+        r = requests.get('http://spartacodingclub.shop/sparta_api/seoulair')
+        rjson = r.json()
+
+        rows = rjson['RealtimeCityAir']['row']
+
+        print(rows)
+
+        >> 'ARPLT_MAIN': 'O3', 'CO': 0.4, 'IDEX_MVL': 31, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '도심권', 'MSRSTE_NM': '중구', 'NO2': 0.015, 'O3': 0.018, 'PM10': 22, 'PM25': 14, 'SO2': 0.002}, {'ARPLT_MAIN': 'PM25', 'CO': 0.4, 'IDEX_MVL': 39, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '도심권', 'MSRSTE_NM': '종로구', 'NO2': 0.016, 'O3': 0.013, 'PM10': 24, 'PM25': 18, 'SO2': 0.003}, {'ARPLT_MAIN': '점검중', 'CO': 0.4, 'IDEX_MVL': -99, 'IDEX_NM': '점검중', 'MSRDT': '201912052100', 'MSRRGN_NM': '도심권', 'MSRSTE_NM': '용산구', 'NO2': 0.027, 'O3': 0.012, 'PM10': 0, 'PM25': 15, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM10', 'CO': 0.5, 'IDEX_MVL': 42, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서북권', 'MSRSTE_NM': '은평구', 'NO2': 0.018, 'O3': 0.019, 'PM10': 36, 'PM25': 14, 'SO2': 0.005}, {'ARPLT_MAIN': 'PM10', 'CO': 0.6, 'IDEX_MVL': 37, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서북권', 'MSRSTE_NM': '서대문구', 'NO2': 0.015, 'O3': 0.018, 'PM10': 28, 'PM25': 9, 'SO2': 0.004}, {'ARPLT_MAIN': 'NO2', 'CO': 0.5, 'IDEX_MVL': 36, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서북권', 'MSRSTE_NM': '마포구', 'NO2': 0.021, 'O3': 0.012, 'PM10': 26, 'PM25': 8, 'SO2': 0.003}, {'ARPLT_MAIN': 'O3', 'CO': 0.6, 'IDEX_MVL': 31, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동북권', 'MSRSTE_NM': '광진구', 'NO2': 0.016, 'O3': 0.018, 'PM10': 17, 'PM25': 9, 'SO2': 0.001}, {'ARPLT_MAIN': 'PM25', 'CO': 0.4, 'IDEX_MVL': 33, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동북권', 'MSRSTE_NM': '성동구', 'NO2': 0.017, 'O3': 0.018, 'PM10': 21, 'PM25': 12, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM10', 'CO': 0.4, 'IDEX_MVL': 34, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동북권', 'MSRSTE_NM': '중랑구', 'NO2': 0.019, 'O3': 0.015, 'PM10': 27, 'PM25': 10, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM10', 'CO': 0.4, 'IDEX_MVL': 34, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동북권', 'MSRSTE_NM': '동대문구', 'NO2': 0.017, 'O3': 0.016, 'PM10': 26, 'PM25': 9, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM10', 'CO': 0.5, 'IDEX_MVL': 37, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동북권', 'MSRSTE_NM': '성북구', 'NO2': 0.014, 'O3': 0.022, 'PM10': 27, 'PM25': 8, 'SO2': 0.003}, {'ARPLT_MAIN': 'O3', 'CO': 0.3, 'IDEX_MVL': 41, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동북권', 'MSRSTE_NM': '도봉구', 'NO2': 0.011, 'O3': 0.024, 'PM10': 25, 'PM25': 12, 'SO2': 0.002}, {'ARPLT_MAIN': 'PM10', 'CO': 0.4, 'IDEX_MVL': 39, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동북권', 'MSRSTE_NM': '강북구', 'NO2': 0.02, 'O3': 0.022, 'PM10': 30, 'PM25': 15, 'SO2': 0.002}, {'ARPLT_MAIN': 'PM25', 'CO': 0.4, 'IDEX_MVL': 36, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동북권', 'MSRSTE_NM': '노원구', 'NO2': 0.016, 'O3': 0.017, 'PM10': 21, 'PM25': 14, 'SO2': 0.004}, {'ARPLT_MAIN': 'PM10', 'CO': 0.4, 'IDEX_MVL': 42, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서남권', 'MSRSTE_NM': '강서구', 'NO2': 0.013, 'O3': 0.021, 'PM10': 36, 'PM25': 16, 'SO2': 0.004}, {'ARPLT_MAIN': 'O3', 'CO': 0.3, 'IDEX_MVL': 37, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서남권', 'MSRSTE_NM': '구로구', 'NO2': 0.016, 'O3': 0.022, 'PM10': 23, 'PM25': 10, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM10', 'CO': 0.4, 'IDEX_MVL': 41, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서남권', 'MSRSTE_NM': '영등포구', 'NO2': 0.022, 'O3': 0.01, 'PM10': 29, 'PM25': 15, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM10', 'CO': 0.4, 'IDEX_MVL': 41, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서남권', 'MSRSTE_NM': '동작구', 'NO2': 0.023, 'O3': 0.012, 'PM10': 29, 'PM25': 15, 'SO2': 0.003}, {'ARPLT_MAIN': 'NO2', 'CO': 0.4, 'IDEX_MVL': 37, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서남권', 'MSRSTE_NM': '관악구', 'NO2': 0.022, 'O3': 0.012, 'PM10': 27, 'PM25': 12, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM25', 'CO': 0.4, 'IDEX_MVL': 43, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '서남권', 'MSRSTE_NM': '금천구', 'NO2': 0.02, 'O3': 0.015, 'PM10': 25, 'PM25': 15, 'SO2': 0.004}, {'ARPLT_MAIN': '점검중', 'CO': 0.4, 'IDEX_MVL': -99, 'IDEX_NM': '점검중', 'MSRDT': '201912052100', 'MSRRGN_NM': '서남권', 'MSRSTE_NM': '양천구', 'NO2': 0.017, 'O3': 0.016, 'PM10': 0, 'PM25': 14, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM10', 'CO': 0.4, 'IDEX_MVL': 39, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동남권', 'MSRSTE_NM': '강남구', 'NO2': 0.018, 'O3': 0.018, 'PM10': 31, 'PM25': 16, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM10', 'CO': 0.3, 'IDEX_MVL': 41, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동남권', 'MSRSTE_NM': '서초구', 'NO2': 0.019, 'O3': 0.024, 'PM10': 34, 'PM25': 13, 'SO2': 0.003}, {'ARPLT_MAIN': 'NO2', 'CO': 0.4, 'IDEX_MVL': 42, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동남권', 'MSRSTE_NM': '송파구', 'NO2': 0.025, 'O3': 0.014, 'PM10': 25, 'PM25': 6, 'SO2': 0.003}, {'ARPLT_MAIN': 'PM25', 'CO': 0.4, 'IDEX_MVL': 39, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동남권', 'MSRSTE_NM': '강동구', 'NO2': 0.02, 'O3': 0.016, 'PM10': 24, 'PM25': 14, 'SO2': 0.002}]
+            요딴게 뜬다. 성공이군.
+
+
+항목들만 정리한 이 내용으로 전체를 쭉 돌려서 불러보겠음
+
+            import requests # requests 라이브러리 설치 필요
+
+            r = requests.get('http://spartacodingclub.shop/sparta_api/seoulair')
+            rjson = r.json()
+
+            rows = rjson['RealtimeCityAir']['row']
+
+            print(rows)
+
+            for row in rows:
+                print(row)
+
+            {'ARPLT_MAIN': 'NO2', 'CO': 0.4, 'IDEX_MVL': 42, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동남권', 'MSRSTE_NM': '송파구', 'NO2': 0.025, 'O3': 0.014, 'PM10': 25, 'PM25': 6, 'SO2': 0.003}
+            {'ARPLT_MAIN': 'PM25', 'CO': 0.4, 'IDEX_MVL': 39, 'IDEX_NM': '좋음', 'MSRDT': '201912052100', 'MSRRGN_NM': '동남권', 'MSRSTE_NM': '강동구', 'NO2': 0.02, 'O3': 0.016, 'PM10': 24, 'PM25': 14, 'SO2': 0.002}
+        >> 줄줄이 뜬다! 성공!
+        >> 구 이름 미세수치의 항목 이름 확인, IDEX_MVL': 39, 'MSRSTE_NM': '강동구'
+        >> 이제 이것만 나오게 정리한다.
+
+        import requests # requests 라이브러리 설치 필요
+
+        r = requests.get('http://spartacodingclub.shop/sparta_api/seoulair')
+        rjson = r.json()
+
+        rows = rjson['RealtimeCityAir']['row']
+
+        for row in rows:
+            gu_name = row['MSRSTE_NM']
+            gu_mise = row['IDEX_MVL']
+            print(gu_name, gu_mise)
+
+        >> 구 이름이랑 미세먼지 수치만 정리하기 성공
+        양천구 -99
+        강남구 39
+        서초구 41
+        송파구 42
+        강동구 39
+
+60보다 작은 구만 뜨도록 해보자
+        import requests # requests 라이브러리 설치 필요
+
+        r = requests.get('http://spartacodingclub.shop/sparta_api/seoulair')
+        rjson = r.json()
+
+        rows = rjson['RealtimeCityAir']['row']
+
+        for row in rows:
+            gu_name = row['MSRSTE_NM']
+            gu_mise = row['IDEX_MVL']
+            if gu_mise < 60:
+                print(gu_name, gu_mise)
+
+        >> 조건 if  < 를 걸어서 필터링 된다.
+
+
+
+    ,o888888o.    8 888888888o.            .8.          `8.`888b                 ,8' 8 8888          8 8888 b.             8      ,o888888o.
+   8888     `88.  8 8888    `88.          .888.          `8.`888b               ,8'  8 8888          8 8888 888o.          8     8888     `88.
+,8 8888       `8. 8 8888     `88         :88888.          `8.`888b             ,8'   8 8888          8 8888 Y88888o.       8  ,8 8888       `8.
+88 8888           8 8888     ,88        . `88888.          `8.`888b     .b    ,8'    8 8888          8 8888 .`Y888888o.    8  88 8888
+88 8888           8 8888.   ,88'       .8. `88888.          `8.`888b    88b  ,8'     8 8888          8 8888 8o. `Y888888o. 8  88 8888
+88 8888           8 888888888P'       .8`8. `88888.          `8.`888b .`888b,8'      8 8888          8 8888 8`Y8o. `Y88888o8  88 8888
+88 8888           8 8888`8b          .8' `8. `88888.          `8.`888b8.`8888'       8 8888          8 8888 8   `Y8o. `Y8888  88 8888   8888888
+`8 8888       .8' 8 8888 `8b.       .8'   `8. `88888.          `8.`888`8.`88'        8 8888          8 8888 8      `Y8o. `Y8  `8 8888       .8'
+   8888     ,88'  8 8888   `8b.    .888888888. `88888.          `8.`8' `8,`'         8 8888          8 8888 8         `Y8o.`     8888     ,88'
+    `8888888P'    8 8888     `88. .8'       `8. `88888.          `8.`   `8'          8 888888888888  8 8888 8            `Yo      `8888888P'
+
+
+
+
