@@ -11,6 +11,7 @@
 8 8888                8 8888            8 8888       8 8888        8  ` 8888     ,88'   8         `Y8o.` 
 8 8888                8 8888            8 8888       8 8888        8     `8888888P'     8            `Yo 
 
+venv는_가상환경이라는_라이브러리라서_폴더를_없는셈쳐야한대_안에다가_뭐만들지말래
 
 
 파이참에서 파이썬을 실행할 때는 우클릭 실행을 눌러줘야
@@ -166,6 +167,14 @@ people = [{'name': 'bob', 'age': 20},
 8 8888         .8'       `8. `88888.     `8888888P'    8 8888     `Y8. .8'       `8. `88888.      `8888888P'    8 888888888888 
 
 
+패키지? 라이브러리? →  Python 에서 패키지는 모듈(일종의 기능들 묶음)을 모아 놓은 단위입니다.
+이런 패키지 의 묶음을 라이브러리 라고 볼 수 있습니다.
+지금 여기서는 외부 라이브러리를 사용하기 위해서 패키지를 설치합니다.
+즉, 여기서는 패키지 설치 = 외부 라이브러리 설치!
+
+
+
+
 패키지 설치 필요!
 vitual enviroment = venv
 가상환경 패키지라고 쓰고
@@ -174,12 +183,37 @@ vitual enviroment = venv
 해결하기 위한 방법임
 
 
+
+가상환경(virtual environment)은 같은 시스템에서 실행되는
+다른 파이썬 응용 프로그램들의 동작에 영향을 주지 않기 위해,
+파이썬 배포 패키지들을 설 치하거나 업그레이드하는 것을 가능하게
+하는 격리된 실행 환경 입니다.
+
+출처 : 파이썬 공식 용어집- 가상환경
+
+
 파일 -> 설정 -> 좌측 메누 중 프로젝트이름 선택 -> 인터프리터 선택->
 패키지 추가인 + 선택 -> REQUESTS를 입력 -> 좌측하단 설치 클릭,,
 
 AJAX역할을 하는 놈임
 
 
+2. pip(python install package) 사용 - requests 패키지 설치해보기
+👉 앱을 설치할 때 앱스토어/플레이스토어를 가듯이,
+새로운 프로젝트의 라이브러리를 가상환경(공구함)에 설치하려면 pip 를 이용하게 됩니다.
+
+
+pip(python install package) 사용 - requests 패키지 설치해보기
+
+
+06. 패키지 사용해보기
+1) Requests 라이브러리 사용해보기 + List/Dictionary/함수/If/For문 연습
+아래 방법으로 서울시 대기 OpenAPI에서, 중구의 미세먼지 값을 가져올 수 있습니다.
+
+        requests 써보기
+        import requests # requests 라이브러리 설치 필요
+
+        r = requests.get('http://spartacodingclub.shop/sparta_api/seoulair') rjson = r.json()
 
 
 
@@ -280,6 +314,13 @@ html에서 했던 미세먼지  API생각해보면 row의 항목들을 (상태 �
 
 
 
+
+
+
+07. 웹스크래핑(크롤링) 기초
+         1) 웹스크래핑 해보기 (영화 제목)
+         어떤 걸 스크래핑 할 계획인가요?
+
     ,o888888o.    8 888888888o.            .8.          `8.`888b                 ,8' 8 8888          8 8888 b.             8      ,o888888o.
    8888     `88.  8 8888    `88.          .888.          `8.`888b               ,8'  8 8888          8 8888 888o.          8     8888     `88.
 ,8 8888       `8. 8 8888     `88         :88888.          `8.`888b             ,8'   8 8888          8 8888 Y88888o.       8  ,8 8888       `8.
@@ -292,5 +333,496 @@ html에서 했던 미세먼지  API생각해보면 row의 항목들을 (상태 �
     `8888888P'    8 8888     `88. .8'       `8. `88888.          `8.`   `8'          8 888888888888  8 8888 8            `Yo      `8888888P'
 
 
+크롤링을 하려면 두가지를 해야하는데,
+1. html 가져오기 ->request로 한 셈이다.
+        html가져오기 ->requests 가지고 진행
+2. html가져온 다음에 필요한 놈을 찾기위해 정밀탐색을 하는 패키지 = 뷰티풀숩을 쓸 것이다.
+        제목 찾기 -> beautiful soup
+인 거라규!
+
+https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt&date=20210829
+
+목표!
+    제목과 평점을 긁어오는 것이 목표
 
 
+        ########  ########    ###    ##     ## ######## #### ######## ##     ## ##           ######   #######  ##     ## ########
+        ##     ## ##         ## ##   ##     ##    ##     ##  ##       ##     ## ##          ##    ## ##     ## ##     ## ##     ##
+        ##     ## ##        ##   ##  ##     ##    ##     ##  ##       ##     ## ##          ##       ##     ## ##     ## ##     ##
+        ########  ######   ##     ## ##     ##    ##     ##  ######   ##     ## ##           ######  ##     ## ##     ## ########
+        ##     ## ##       ######### ##     ##    ##     ##  ##       ##     ## ##                ## ##     ## ##     ## ##
+        ##     ## ##       ##     ## ##     ##    ##     ##  ##       ##     ## ##          ##    ## ##     ## ##     ## ##
+        ########  ######## ##     ##  #######     ##    #### ##        #######  ########     ######   #######   #######  ##
+
+        ㅈㄴ 뭐가 뷰티풀하다는 건지 ㅈ도 모르겠는 수프새끼 패키지 ㅅㅂ 또나왔네 지겨워라
+        파이참 파일 -> 설정 -> + 클릭 -> bs4 검색해서 설치
+
+
+크롤링 기본 세팅
+컴퓨터가 긁어오는 거지만 사람 인 척
+나는 수프 새끼를 쓸거야. 라고 선언한 것.
+
+            import requests
+            from bs4 import BeautifulSoup
+
+            headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+            data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt&date=20210829',headers=headers)
+            soup = BeautifulSoup(data.text, 'html.parser')
+
+import requests
+from bs4 import BeautifulSoup
+
+headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt&date=20210829',headers=headers)
+
+soup = BeautifulSoup(data.text, 'html.parser')
+
+# #########코딩 시작 #########
+
+
+일단 ↗ 이 색히 +
+            print(soup)
+까지 해보면
+↘ 밑에 ㅈㄹ이 남 html을 가져온 거.
+
+            ...
+            f="/movie/sdb/browsing/bmovie_nation.naver" onclick="clickcr(this, 'LNB.dir', '', '', event);" title="디렉토리"><em>디렉토리</em></a></li>
+            </ul>
+            </h4>
+            <!-- 탭메뉴 -->
+            <div class="tab_type_6">
+            <ul><!--활성화된 탭의 이미지는 _on.gif 입니다--
+            <!-- //탭메뉴 --</th>
+            <th colspan="2" scope="col">변동폭</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td class="blank01" colspan="8"></td></tr>
+            <!-- 예제
+                            <tr>
+                                <td class="ac"><img src="https://ssl.pstatic.net/imgmovie/2007/img/common/bullet_r_g50.gif" alt="50" width="14" height="13"></td>
+                                <td class="title"><a href="#">트랜스포머</a></td>
+                                <td class="ac"><img src="https://ssl.pstatic.net/imgmovie/2007/img/common/icon_down_1.gif" alt="down" width="7" height="10"></td>
+                                <td class="range ac">7</td>
+                            </tr>
+                            -->
+            <tr>
+            <td class="ac"><img alt="01" height="13" src="https://ssl.pstatic.net/imgmovie/2007/img/common/bullet_r_r01.gif" width="14"/></td>
+            <td class="title">
+            <div class="tit5">
+            <a href="/movie/bi/mi/basic.naver?code=186114" title="밥정">밥정</a>
+            </div>
+            </td>
+            <!-- 평점순일 때 평점 추가하기  -->
+            <td><div class="point_type_2"><div class="mask" style="width:96.40000343322754%"><img alt="" height="14" src="https://ssl.pstatic.net/imgmovie/2007/img/common/point_type_2_bg_on.gif" width="79"/></div></div></td>
+            <td class="point">9.64</td>
+            ...
+
+
+
+
+2-1. 뷰티풀 숩 쓰는 법
+        -뭐가 자꾸 재밌다는 거야 ㅈㄷ없어...
+
+                    import requests from bs4 import BeautifulSoup
+
+            # 타겟 URL을 읽어서 HTML를 받아오고,
+                    headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+                    data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt&date=20210829',headers=headers)
+
+            # HTML을 BeautifulSoup이라는 라이브러리를 활용해 검색하기 용이한 상태로 만듦
+            # soup이라는 변수에 "파싱 용이해진 html"이 담긴 상태가 됨
+            # 이제 코딩을 통해 필요한 부분을 추출하면 된다.
+                    soup = BeautifulSoup(data.text, 'html.parser')
+
+                    #############################
+                    # (목적에 맞게 코딩)
+                    #############################
+
+         대충 이딴 골조를 따라가는 형식인 것이다.
+
+
+3. select / select_one의 사용법
+
+HTML에서 첫번째 있는 밥정이라는 영화 제목 새끼를 좌클릭 -> 검사
+콘솔 상에서 제목 있는 부분을 클릭 -> copy-> copy slector로 복사해오기
+title = soup.select_one('')에 붙여넣기
+
+태그 안의 텍스트를 찍고 싶을 땐 → 태그.text
+태그 안의 속성을 찍고 싶을 땐 → 태그['속성']
+
+                import requests from bs4 import BeautifulSoup
+
+                headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+                data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt&date=20210829',headers=headers)
+
+                soup = BeautifulSoup(data.text, 'html.parser')
+
+                title = soup.select_one('#old_content > table > tbody > tr:nth-child(2) > td.title > div > a')
+                print(title)
+
+        을 실행해보면
+                <a href="/movie/bi/mi/basic.naver?code=186114" title="밥정">밥정</a>
+        이 나온다
+
+        태그 안에서도 href 값 [속성] 을 가져오려면
+                        print(title)를
+                print(title['href'])
+        로 붙여 넣으면
+                import requests from bs4 import BeautifulSoup
+
+                headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+                data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt&date=20210829',headers=headers)
+
+                soup = BeautifulSoup(data.text, 'html.parser')
+                print(title['href'])
+
+        ↘ 이딴게 나온다.
+                /movie/bi/mi/basic.naver?code=186114
+
+
+
+3-2. 여러 개의 항목을 가져오기 = 공통 문자열을 넣어서 돌리면 되지 뭘 설명이 논점은 없고 장황해
+
+공통된 문자열 을 찾기 위해 몇개의 제목만 검사 , 복사 -> 셀렉터로 긁어와보자.
+                    #old_content > table > tbody > tr:nth-child(3) > td.title > div > a
+                    #old_content > table > tbody > tr:nth-child(4) > td.title > div > a
+                    ---------------------------------ㅣ ←
+                                                               →     ㅣ--------------------
+                                                  여기 까지가 똑같이 생겨 먹은 거 확인 ㅇㅇ
+
+
+앞 문자열을 정해서 긁어오기 문법
+        movies = soup.select('') 으로 묶을 거다.
+                    import requests from bs4 import BeautifulSoup
+
+                    headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+                    data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt&date=20210829',headers=headers)
+
+                    soup = BeautifulSoup(data.text, 'html.parser')
+
+                    movies = soup.select('#old_content > table > tbody > tr')
+                    print(movies)
+        을 해보면
+            ↘ 이따위로 줄줄이 뜬다.
+      ...
+        <a href="/movie/bi/mi/basic.naver?code=186114" title="밥정">밥정</a>
+        </div>
+        </td>
+        <!-- 평점순일 때 평점 추가하기  -->
+        <td><div class="point_type_2">word=186114">평점주기</a></td>
+       ...
+        <!----------------------------------------->
+      ...
+        <a href="/movie/bi/mi/basic.naver?code=171539" title="그린 북">그린 북</a>
+        </div>
+        </td>
+        <!-- 평점순일 때 평점 추가하기  -->
+        <td><div class="point_type_2"><div class="mask" style="width:95.9000015258789%"><img alt="" height="14" src="https://ssl.pstatic.net/imgmovie/2007/img/common/point_type_2_bg_on.gif" width="79"/></div></div></td>
+        <td class="point">9.59</td>
+        <td class="ac"><a class="txt_link" href="/movie/point/af/list.naver?st=mcode&amp;sword=171539">평점주기</a></td>
+        <!----------------------------------------->
+         ...
+
+                중간에 불순물 문자열이 끼어 있는 경우도 있기 때문에
+뒷문자열도 포함해서 걸러낸 다음 불러오자.
+      for movie in movies:
+      fuxxtitle = movie.select_one('td.title > div > a')
+      를 덧붙여서 쓸거다.
+
+                    import requests from bs4 import BeautifulSoup
+
+                    headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+                    data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt&date=20210829',headers=headers)
+
+                    soup = BeautifulSoup(data.text, 'html.parser')
+
+                    movies = soup.select('#old_content > table > tbody > tr')
+
+                    for movie in movies:
+                    fuxxtitle = movie.select_one('td.title > div > a')
+                    print(fuxxtitle)
+
+
+        이렇게 뜨긴 뜨는데
+                    <a href="/movie/bi/mi/basic.naver?code=157243" title="당갈">당갈</a>
+                    <a href="/movie/bi/mi/basic.naver?code=196843" title="극장판 바이올렛 에버가든">극장판 바이올렛 에버가든</a>
+                    None
+                    <a href="/movie/bi/mi/basic.naver?code=181710" title="포드 V 페라리">포드 V 페라리</a>
+                    <a href="/movie/bi/mi/basic.naver?code=179518" title="주전장">주전장</a>
+                    <a href="/movie/bi/mi/basic.naver?code=17421" title="쇼생크 탈출">쇼생크 탈출</a>
+                    None
+                    <a href="/movie/bi/mi/basic.naver?code=181700" title="안녕 베일리">안녕 베일리</a>
+                    <a href="/movie/bi/mi/basic.naver?code=37886" title="클레멘타인">클레멘타인</a>
+                    None
+
+아직도 None 같은 불순물이 끼어 있다.
+        이건 <!-----------------------------------------> 이 새끼인 듯?
+if  fuxxtitle is not None: 을 붙여서 None으로 공통으로 뜨는 새끼들도 걸러주겠음
+
+                    import requests
+                    from bs4 import BeautifulSoup
+
+                    headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+                    data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt&date=20210829',headers=headers)
+
+                    soup = BeautifulSoup(data.text, 'html.parser')
+
+                    movies = soup.select('#old_content > table > tbody > tr')
+
+                    for movie in movies:
+                        fuxxtitle = movie.select_one('td.title > div > a')
+                        if  fuxxtitle is not None:
+                            print(fuxxtitle)
+
+공통으로 뜨던 문자열 불순물이 없어졌다.
+            <a href="/movie/bi/mi/basic.naver?code=14450" title="쉰들러 리스트">쉰들러 리스트</a>
+            <a href="/movie/bi/mi/basic.naver?code=161850" title="아이 캔 스피크">아이 캔 스피크</a>
+            <a href="/movie/bi/mi/basic.naver?code=134899" title="동주">동주</a>
+            <a href="/movie/bi/mi/basic.naver?code=181700" title="안녕 베일리">안녕 베일리</a>
+            <a href="/movie/bi/mi/basic.naver?code=37886" title="클레멘타인">클레멘타인</a>
+            종료 코드 0(으)로 완료된 프로세스
+
+이제 필요한 알멩이 텍스트만 출력되도록 해보자
+    print(  .text)을 사용할 거다.
+                    import requests
+                    from bs4 import BeautifulSoup
+
+                    headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+                    data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt&date=20210829',headers=headers)
+
+                    soup = BeautifulSoup(data.text, 'html.parser')
+
+                    movies = soup.select('#old_content > table > tbody > tr')
+
+                    for movie in movies:
+                        fuxxtitle = movie.select_one('td.title > div > a')
+                        if  fuxxtitle is not None:
+                            print(fuxxtitle.text)
+
+            죽은 시인의 사회
+            히든 피겨스
+            알라딘
+            어벤져스: 엔드게임
+            레옹
+            쉰들러 리스트
+
+
+종료 코드 0(으)로 완료된 프로세스
+로 제목 텍스트만 깔끔하게 긁어온다.
+
+
+
+
+이제 순위 영화명 평점까지 긁어올거다.
+
+
+
+
+
+
+                                기억하자, 요점
+                                # URL을 읽어서 HTML를 받아오고,
+                                        headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}ㅋ
+                                        data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt&date=20210829',headers=headers)
+                                # HTML을 BeautifulSoup이라는 라이브러리를 활용해 검색하기 용이한 상태로 만듦
+                                        soup = BeautifulSoup(data.text, 'html.parser')
+                                # select를 이용해서, tr들을 불러오기
+                                        movies = soup.select('#old_content > table > tbody > tr')
+
+                                # movies (tr들) 의 반복문을 돌리기
+                                        for movie in movies:
+                                # movie 안에 a 가 있으면,
+                                        a_tag = movie.select_one('td.title > div > a')
+                                        if a_tag is not None:
+                                # a의 text를 찍어본다.
+                                            print (a_tag.text)
+
+
+                                2_2. beautifulsoup 내 select에 미리 정의된 다른 방법을 알아봅니다
+
+                                # 선택자를 사용하는 방법 (copy selector)
+                                soup.select('태그명')
+                                soup.select('.클래스명')
+                                soup.select('#아이디명')
+
+                                soup.select('상위태그명 > 하위태그명 > 하위태그명')
+                                soup.select('상위태그명.클래스명 > 하위태그명.클래스명')
+
+                                # 태그와 속성값으로 찾는 방법
+                                soup.select('태그명[속성="값"]')
+                                # 한 개만 가져오고 싶은 경우
+                                soup.select_one('위와 동일')
+
+                                항상 정확하지는 않으나, 크롬 개발자도구를 참고할 수도 있습니다.
+                                1. 원하는 부분에서 마우스 오른쪽 클릭 → 검사
+                                2. 원하는 태그에서 마우스 오른쪽 클릭
+                                3. Copy → Copy selector로 선택자를 복사할 수 있음
+
+
+
+  ::::::::   :::    ::: ::::::::::: :::::::::
+ :+:    :+:  :+:    :+:     :+:          :+:
+ +:+    +:+  +:+    +:+     +:+         +:+
+ +#+    +:+  +#+    +:+     +#+        +#+
+ +#+  # +#+  +#+    +#+     +#+       +#+
+ #+#   +#+   #+#    #+#     #+#      #+#
+  ###### ###  ########  ########### #########
+        https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt&date=20210829
+        ↑ 네이버 평점 페이지 ㅅㄲ에서
+웹스크래핑 더 해보기 (순위, 제목, 별점)
+
+        ↓ 기본 형식은 일단 이따위임.
+                import requests
+                from bs4 import BeautifulSoup
+
+                headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+                data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt&date=20210829',headers=headers)
+
+                soup = BeautifulSoup(data.text, 'html.parser')
+
+                movies = soup.select('#old_content > table > tbody > tr')
+
+                for movie in movies:
+                    fuxxtitle = movie.select_one('td.title > div > a')
+                    if  fuxxtitle is not None:
+                        title = fuxxtitle.text
+                        rank = ...
+                        star = ...
+                        print(title, rank, star)
+
+
+1. rank부분 긁어오기
+            아 ㅅㅂ 랭크면 순위지. 명사를 통일해라 좀 아오
+제목에서 우클 -> 검사 -> 이거 나오는 부분을 열고 들어가서
+복사-> 셀렉터복사 ......... 어휴 지긋지긋해
+            #old_content > table > tbody > tr:nth-child(4) > td:nth-child(6) > img
+      이게 평점부분인거여 뭐여 -_-
+      여튼 이 새끼를      tr:nth-child(1) > td:nth-child(6) > img         부분만 잘라서
+      rank = movie.select_one('여기다 넣을거다')
+
+                import requests
+                from bs4 import BeautifulSoup
+
+                headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+                data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt&date=20210829',headers=headers)
+
+                soup = BeautifulSoup(data.text, 'html.parser')
+
+                movies = soup.select('#old_content > table > tbody > tr')
+
+                for movie in movies:
+                    fuxxtitle = movie.select_one('td.title > div > a')
+                    if  fuxxtitle is not None:
+                        title = fuxxtitle.text
+                        rank = movie.select_one('td:nth-child(1) > img')
+                        print(rank)
+
+      일단 평점을 출력해서 상태를 보면
+            <img alt="47" height="13" src="https://ssl.pstatic.net/imgmovie/2007/img/common/bullet_r_g47.gif" width="14"/>
+            <img alt="48" height="13" src="https://ssl.pstatic.net/imgmovie/2007/img/common/bullet_r_g48.gif" width="14"/>
+           ...
+            이딴 형식임
+                       ↑
+      현재 필요한건 alt"" 값이니깐
+        print(rank['alt']) 을 써준다.
+
+        or
+
+        rank = movie.select_one('td:nth-child(1) > img')['alt']
+        print(rank)
+        이렇게 윗줄에 빼주고 써도 됨.
+
+                import requests
+                from bs4 import BeautifulSoup
+
+                headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+                data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt&date=20210829',headers=headers)
+
+                soup = BeautifulSoup(data.text, 'html.parser')
+
+                movies = soup.select('#old_content > table > tbody > tr')
+
+                for movie in movies:
+                    fuxxtitle = movie.select_one('td.title > div > a')
+                    if  fuxxtitle is not None:
+                        title = fuxxtitle.text
+                        rank = movie.select_one('td:nth-child(1) > img')['alt']  <-['alt']을 여기다 넣고
+                         print(rank) <- 로 두는 이유는
+                        print(rank['alt']) <-이따가 print()를 또 지우고 딴거 쓰고 지랄할 거니까 ['alt']를 위로 붙이는 거.
+
+
+2. 평점 긁어오기
+            평점 부분의 태그를 셀렉터 복사함 아 지겨워...
+            페이지 상에  '9.43 뭐 어쩌고 저쩌고 있는 본문 부분'을 좌클릭 검사 어쩌고 저쩌고
+            셀렉터로 복사해오고 또 그 ㅈㄹ
+                    #old_content > table > tbody > tr:nth-child(1) > td.point
+                    이 따위로 생겨 먹은 거 확인
+td:nth-child(1) 는
+rank = 에서 불러다 왔으니까 생략한댄다
+                      rank = movie.select_one('td:nth-child(1) > img')['alt']
+                                                       ↑ 여기 있으니까 이부분 안쓰겠대
+                      star = movie.select_one('td.point')
+                      이 꼬라지로 ㅇㅇ
+평점을 또 출력해서 어떻게 나오는 지 또 봐야지 어휴...........
+
+                import requests
+                from bs4 import BeautifulSoup
+
+                headers = {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+                data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt&date=20210829', headers=headers)
+
+                soup = BeautifulSoup(data.text, 'html.parser')
+
+                movies = soup.select('#old_content > table > tbody > tr')
+
+                for movie in movies:
+                fuxxtitle = movie.select_one('td.title > div > a')
+                if  fuxxtitle is not None:
+                      title = fuxxtitle.text
+                      rank = movie.select_one('td:nth-child(1) > img')['alt']
+                      star = movie.select_one('td.point')
+                      print(star.text)
+숫자인 평점만 긁어올 거니까          ↗ .text 붙이기
+
+            출력해보면 9.47
+                    9.45
+                    9.44
+                    9.43
+                    9.4
+            이딴 거 뜸 어 됐고 꺼져
+
+star = movie.select_one('td.point').text
+로 .text를 윗줄로 올리고  print  없앰
+
+
+            import requests
+            from bs4 import BeautifulSoup
+
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+            data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.naver?sel=pnt&date=20210829', headers=headers)
+
+            soup = BeautifulSoup(data.text, 'html.parser')
+
+            movies = soup.select('#old_content > table > tbody > tr')
+
+            for movie in movies:
+                     fuxxtitle = movie.select_one('td.title > div > a')
+                     if  fuxxtitle is not None:
+                                  title = fuxxtitle.text
+                                  rank = movie.select_one('td:nth-child(1) > img')['alt']
+                                  star = movie.select_one('td.point').text
+                                  print(rank, title, star)
+
+
+        43 알라딘 9.38
+        44 어벤져스: 엔드게임 9.38
+        45 레옹 9.38
+        46 쉰들러 리스트 9.37
+        47 아이 캔 스피크 9.37
+        48 동주 9.37
+        49 안녕 베일리 9.37
+        50 클레멘타인 9.37
+이딴 거 뜨면 끝
